@@ -1,0 +1,507 @@
+/*!-----------------------Emily--------------------------!*/
+*{
+  margin: 0%;
+  padding: 0;
+  outline: none;
+  font-family: sans-serif;
+
+}
+header,
+section,
+footer,
+aside,
+nav,
+article,
+hgroup {
+  display: block;
+}
+
+.gale {
+  width: 85%;
+  margin: 1% auto;
+  padding: 1%;
+  border: 1% solid rgba(16, 116, 173, 0.438);
+}
+
+
+.galeria {
+  width: 90%;
+  margin: auto;
+  list-style: none;
+  padding: 20px;
+  box-sizing: border-box;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  
+}
+.galeria li {
+  margin: 2px auto;
+}
+
+
+.galeria img {
+  width: 250px;
+  height: 150px;
+  border-radius: 3%;
+}
+
+.mesas {
+  width: 90%;
+  margin: auto;
+  list-style: none;
+  padding: 10px;
+  box-sizing: border-box;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.mesas li {
+  margin: 1px auto;
+}
+
+.mesas img {
+  width: 150px;
+  height: 150px;
+  border-radius: 3%;
+}
+
+/*estilos del modal*/
+.modal {
+  display: none;
+}
+
+.modal:target {
+  display: block;
+
+  transition: all 0.3s;
+  position: fixed;
+  background: rgba(0, 0, 0, 0.856);
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.EG {
+  color: #fff;
+  font-size: 30px;
+  text-align: left;
+
+  margin: 15px 290px;
+}
+
+.imagen {
+  width: 100%;
+  height: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.imagen a {
+  color: #fff;
+  font-size: 40px;
+  text-decoration: none;
+  margin: 0 10px;
+}
+
+.imagen a:nth-child(2) {
+  margin: 0;
+  height: 100%;
+  flex-shrink: 2;
+}
+
+.imagen img {
+  width: 95%;
+  height: 100%;
+  max-width: 100%;
+  border: 3px solid rgb(66, 66, 66);
+  box-sizing: border-box;
+  border-radius: 5px;
+}
+
+.cerrar {
+  display: block;
+  background: #fff;
+  width: 25px;
+  height: 25px;
+
+  margin: 15px auto;
+  text-align: center;
+  text-decoration: none;
+  font-size: 25px;
+  color: #000;
+  padding: 5px;
+  line-height: 20px;
+
+  border-radius: 50%;
+}
+
+.pie {
+  clear: both;
+  padding: 20px;
+  background-color: slategray;
+  color: snow;
+  font-size: 50px;
+}
+
+.SEnc {
+  text-align: left;
+  padding: 1%;
+  background-image: url(../images/fondo.png);
+  background-color: rgba(252, 213, 243, 0.329);
+}
+
+table {
+  flex-wrap: nowrap;
+  table-layout: fixed;
+  width: 80%;
+  border-collapse: none;
+  border: 3px solid #fff;
+  text-align: center;
+  justify-content: center;
+  margin: auto;
+}
+
+thead th:nth-child(1) {
+  width: 10%;
+}
+
+thead th:nth-child(2-5) {
+  width: 10%;
+  padding: 5px;
+}
+
+th,
+td {
+  padding: 5px;
+}
+
+thead,
+tfoot {
+  background: #e8e5d9;
+  color: white;
+  text-shadow: 1px 1px 1px black;
+}
+
+thead th,
+tfoot th,
+tfoot td {
+  background: #7b7786;
+  border: 3px solid #fff;
+}
+
+tbody tr:nth-child(odd) {
+  background-color: #c6d7fd;
+  padding: 3px;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #ff9bbc75;
+}
+
+.Mesas {
+  text-align: left;
+  padding: 0.5%;
+  background-image: url(../images/fondo.png);
+
+  background-color: rgba(252, 213, 243, 0.329);
+}
+
+
+/*!----------FORMULRIO-----!*/
+
+
+
+#EGMBoton{
+  background: linear-gradient(to bottom, rgba(255, 223, 117, 0.39), rgba(240, 121, 52, 0.411)), url(../images/fondo.png);
+  margin: 2%;
+  padding:3% ;
+  align-items: center;
+  color: #000;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  border-radius: 20px;
+  font-size: 25px;
+  font-style: bold;
+  border: 5px	outset rgb(132, 185, 161);
+
+ }
+
+
+  .Error{
+    margin: 15px;
+    
+    width:90%;
+    height:300px;
+    background: linear-gradient( hsla(36, 86%, 57%, 0.308), rgba(255, 246, 123, 0.336)),  url(../images/fondo.png);
+    position: center;
+    
+    font-size: 30px;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 15px;
+    color: rgb(0, 0, 0);
+  }
+
+ 
+
+
+  .contenedor{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: url(images/Salon-Picaddilly-Empresarial-4.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.divi{
+    background: #fff;
+    width: 30%;
+    border-radius: 7px;
+    text-align: center;
+    padding: 30px 35px 0 35px;
+}
+
+.divi h2{
+    font-size: 20px;
+    font-weight: 600;
+    margin: 0 0 30px 0;
+}
+
+.divi .Princi_form_e2gm{
+
+    width: 100%;
+    overflow: hidden;
+
+}
+.Princi_form_e2gm  form{
+    display: flex;
+    width: 400%;
+}
+
+.Princi_form_e2gm form .paginaF{
+    width: 25%;
+    transition: margin-left 0.3s ease-in-out;
+}
+
+.Princi_form_e2gm form .paginaF .titulo{
+    text-align: left;
+    font-size: 20px;
+    font-weight: 50px;
+}
+
+.Princi_form_e2gm form .paginaF .datos{
+    height: 35px;
+    width: 95%;
+    margin: 40px 0;
+    display: flex;
+    position: relative;
+}
+
+#checkbox{
+
+  width: 95%;
+  align-items: center;
+  display: flex;
+  position: relative;
+
+}
+#checkbox input{
+
+
+  top: -30px;
+  font-weight: 500;
+  font-size: 14px;
+  font-style: italic;
+  margin: 5px;
+  text-align: left;
+  width: 100%;
+
+}
+.Princi_form_e2gm form .paginaF .datos label{
+    position: absolute;
+    top: -30px;
+    font-weight: 500;
+    font-size: 14px;
+    font-style: italic;
+    float: left;
+    text-align: left;
+    width: 100%;
+}
+
+.Princi_form_e2gm form .paginaF .datos input{
+
+    width: 100%;
+    height: 100%;
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    font-size: 16px;
+    padding-left: 15px;
+}
+
+
+
+.Princi_form_e2gm form .paginaF .datos select{
+
+    width: 100%;
+    padding: 1px;
+    font-weight: 500;
+    font-size: 17px;
+    border-radius: 5px;
+    border: 1px solid lightgray;
+}
+
+.Princi_form_e2gm form .paginaF .datos button{
+    width: 100%;
+    height: calc(100% + 5px);
+    margin-top: -20px;
+    border: none;
+    background: rgb(0, 0, 0) ;
+    border-radius: 7px ;
+    color: floralwhite;
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition:  0.3 ease;
+
+}
+.Princi_form_e2gm form .paginaF .datos button:hover{
+    background: rgb(255, 188, 125);
+    color: #000;
+}
+
+.Princi_form_e2gm form .paginaF .btn button{
+    margin-top: -20px!important;
+}
+form .paginaF .btn button.volver{
+    margin-right: 3px;
+    font-size: 17px;
+}
+form .paginaF .btn button.adelante{
+    margin-left: 3px;
+    font-size: 17px;
+}
+
+/*comienza los*/
+
+.divi .progres_bar{
+    display: flex;
+    margin: 40px 0;
+}
+.divi .progres_bar .pasos{
+    text-align: center;
+    width: 100%;
+    position: relative;
+}
+.progres_bar .pasos p{
+    font-size: 18px;
+    font-weight: 500;
+    color: rgb(0, 0, 0);
+    margin-bottom: 8px;
+}
+.progres_bar .pasos p.active{
+    color: #00ffff;
+}
+.progres_bar .pasos .numPB{
+    position: relative;
+    width: 25px;
+    height: 25px;
+    border: 2px solid #000;
+    border-radius: 50px;
+    display: inline-block;
+    font-weight: 500;
+    font-size: 17px;
+    line-height: 25px;
+}
+
+.progres_bar .pasos .numPB.active{
+    border-color: #00edee ;
+    background: #00edee;
+}
+
+.progres_bar .pasos .numPB span{
+
+    font-weight: 500;
+    font-size: 17px;
+    line-height: 25px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.progres_bar .pasos .numPB.active span{
+    display: none;
+}
+
+.progres_bar .pasos .check{
+    display: none;
+    position: absolute;
+    left: 50%;
+    top: 70%;
+    font-size: 15px;
+    transform: translate(-50%,-50%);
+}
+.progres_bar .pasos .check.active{
+    display: block;
+    color: rgb(255, 255, 255);
+}
+
+
+
+.progres_bar .pasos .numPB:before,
+.progres_bar .pasos .numPB:after{
+    position: absolute;
+    content: '';
+    width: 44px;
+    height: 3px;
+    bottom: 11px;
+    right: -53px;
+    background: #000;
+}
+
+.progres_bar .pasos:last-child .numPB:before,
+.progres_bar .pasos:last-child .numPB:after{
+    display: none;
+}
+.progres_bar .pasos .numPB.active:after{
+    background: #00edee;
+    animation: mov 0.3s linear forwards;
+    transform: scaleX(0);
+    transform-origin: left;
+}
+@keyframes mov{
+    100%{
+        transform: scaleX(1);
+
+    }
+}
+
+/* password */
+
+.ojopass{
+    position: absolute;
+    top: 29%;
+    right: 7px;
+    font-size: 20px;
+    color: cadetblue;
+
+}
+#ocultar{
+    display: none;
+}
+#mostar, #ocultar{
+    cursor: pointer;
+}
+
+/* estilos errores */
+.error {
+    color: rgb(255, 0, 0);
+    
+    text-align: right;
+}
