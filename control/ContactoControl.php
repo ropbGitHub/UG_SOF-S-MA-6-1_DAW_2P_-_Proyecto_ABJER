@@ -14,6 +14,6 @@
             //llamar al modelo
             $resultados=$this->model->listar();
             //llamar a la vista
-            require_once '';
+            require_once 'visual/contacto/contacto.nuevo.php';
         }
     }
