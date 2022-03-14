@@ -14,6 +14,6 @@
             //llamar al modelo
             $resultados=$this->model->listar();
             //llamar a la vista
-            require_once 'visual/usuarioPerez/usuario.nuevo.php'; //tiene que cambiar "nuevo"por "listar"
+            require_once 'visual/modulos/usuarioPerez/usuario.nuevo.php'; //tiene que cambiar "nuevo"por "listar"
         }
     }

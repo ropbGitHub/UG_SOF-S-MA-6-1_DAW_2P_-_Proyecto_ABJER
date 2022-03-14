@@ -14,6 +14,6 @@
             //llamar al modelo
             $resultados=$this->model->listar();
             //llamar a la vista
-            require_once 'visual/contactoAlvear/contacto.nuevo.php';
+            require_once 'visual/modulos/contactoAlvear/contacto.nuevo.php';
         }
     }

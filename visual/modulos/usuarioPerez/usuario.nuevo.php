@@ -1,4 +1,4 @@
-<?php require_once 'visual/templatesPerez/Header.php'; ?>
+<?php require_once 'visual/templates/templatesPerez/Header.php'; ?>
 
 <!-- main-->
 <main>
@@ -68,4 +68,4 @@
       </div>
     </main>
 
-<?php require_once 'visual/templatesPerez/Footer.php'; ?>
+<?php require_once 'visual/templates/templatesPerez/Footer.php'; ?>
