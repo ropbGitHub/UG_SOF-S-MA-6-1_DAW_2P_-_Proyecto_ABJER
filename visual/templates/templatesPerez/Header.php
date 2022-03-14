@@ -54,7 +54,7 @@
             <a href="GonzalezEmily.html"><strong class="peso">Galería</strong></a>
           </li>
           <li>
-            <a href="PradoAndres.html"><strong class="peso">Servicios</strong></a>
+            <a href="index.php?c=cotizar&a=index&p=cotizar"><strong class="peso">Servicios</strong></a>
           </li>
           <li>
             <a href="MatamorosJoaquin.html"><strong class="peso">Q&A</strong></a>

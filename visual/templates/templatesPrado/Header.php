@@ -12,10 +12,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- CSS Style-->
     <link rel="stylesheet" href="../../assets/css/style_master.css" />
-    <link rel="stylesheet" href="../../assets/css/AlvearBilly.css" />
+    <link rel="stylesheet" href="../../assets/css/PradoAndres.css" />
     <!-- Javascript -->
     <script src="../../assets/js/app.js" defer></script>
-    <script src="../../assets/js/app_alvear.js" defer></script>
     <!-- ICONO MENU -->
     <script src="https://kit.fontawesome.com/7f7aa7ef65.js" crossorigin="anonymous"></script>
     <!-- browser tab icon-->
@@ -49,13 +48,13 @@
             <li>
               <a href="GonzalezEmily.html"><strong class="peso">Galería</strong></a>
             </li>
-            <li>
+            <li class="active">
               <a href="index.php?c=cotizar&a=index&p=cotizar"><strong class="peso">Servicios</strong></a>
             </li>
             <li>
               <a href="MatamorosJoaquin.html"><strong class="peso">Q&A</strong></a>
             </li>
-            <li class="active">
+            <li>
               <a href="index.php?c=contacto&a=index&p=contacto"><strong class="peso">Contacto</strong></a>
             </li>
           </ul>
