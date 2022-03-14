@@ -1,4 +1,4 @@
-<?php require_once 'visual/templates/Header.php'; ?>
+<?php require_once 'visual/templatesAlvear/Header.php'; ?>
 
 <main class="main_form">
         <p class="par_formulario">Contáctese con Nosotros</p>
@@ -131,4 +131,4 @@
       </main>
 
 <!-- incluimos  pie de pagina -->
-<?php require_once 'visual/templates/Footer.php'; ?>
+<?php require_once 'visual/templatesAlvear/Footer.php'; ?>

@@ -1,11 +1,11 @@
 <?php
-    require_once 'model/dao/ContactoDAO.php';
+    require_once 'model/dao/UsuarioDAO.php';
     
-    class ContactoControl {
+    class UsuarioControl {
         private $model;
 
         public function __construct(){
-            $this->model=new ContactoDAO();
+            $this->model=new UsuarioDAO();
         }
 
         //funciones del controlador
@@ -14,6 +14,6 @@
             //llamar al modelo
             $resultados=$this->model->listar();
             //llamar a la vista
-            require_once 'visual/contactoAlvear/contacto.nuevo.php';
+            require_once 'visual/usuarioPerez/usuario.nuevo.php'; //tiene que cambiar "nuevo"por "listar"
         }
     }

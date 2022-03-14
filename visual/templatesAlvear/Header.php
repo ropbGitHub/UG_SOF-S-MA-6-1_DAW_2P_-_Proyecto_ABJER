@@ -44,7 +44,7 @@
 
           <ul class="menu_items">
             <li>
-              <a href="indexRenan.php"><strong class="peso">Inicio</strong></a>
+              <a href="index.php?c=usuario&a=index&p=usuario"><strong class="peso">Inicio</strong></a>
             </li>
             <li>
               <a href="GonzalezEmily.html"><strong class="peso">Galería</strong></a>
@@ -55,8 +55,8 @@
             <li>
               <a href="MatamorosJoaquin.html"><strong class="peso">Q&A</strong></a>
             </li>
-            <li><!--class="active"-->
-              <a href="AlvearBilly.php"><strong class="peso">Contacto</strong></a>
+            <li class="active">
+              <a href="index.php?c=contacto&a=index&p=contacto"><strong class="peso">Contacto</strong></a>
             </li>
           </ul>
 
