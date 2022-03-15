@@ -70,11 +70,13 @@
     </div>
   </div>
 </main>
+</div> <!-- class="agrupar" tag close -->
 
+<!-- footer -->
 <?php require_once 'visual/templates/footer.php'; ?>
 
 <!-- Enlance externo al JavaScript de Prado -->
-<script src="../../assets/js/Andres_Prado.js"></script>
+<script src="assets/js/Andres_Prado.js"></script>
 </body>
 
 </html>

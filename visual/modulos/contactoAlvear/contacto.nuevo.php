@@ -100,10 +100,10 @@
     </div>
   </form>
 </main>
+</div> <!-- class="agrupar" tag close -->
 
-<!-- incluimos  pie de pagina -->
+<!-- footer -->
 <?php require_once 'visual/templates/footer.php'; ?>
-
 </body>
 
 </html>
