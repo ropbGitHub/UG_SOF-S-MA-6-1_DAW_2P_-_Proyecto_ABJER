@@ -1,5 +1,3 @@
-</div>
-
     <!-- footer -->
     <footer class="pie-pagina">
       <div class="grupo-1">
@@ -18,15 +16,11 @@
         <div class="box">
           <h2>SIGUENOS</h2>
           <div class="red-social">
-            <a href="https://www.facebook.com"
-              ><img src="../../assets/images/face.png" alt="RF" height="80" width="100"
-            /></a>
-            <a href="https://twitter.com"
-              ><img src="../../assets/images/tw.png" alt="RT" height="80" width="100"
-            /></a>
-            <a href="https://www.instagram.com"
-              ><img src="../../assets/images/insta.png" alt="RC" height="80" width="100"
-            /></a>
+            <a href="https://www.facebook.com"><img src="../../assets/images/face.png" alt="RF" height="80"
+                width="100" /></a>
+            <a href="https://twitter.com"><img src="../../assets/images/tw.png" alt="RT" height="80" width="100" /></a>
+            <a href="https://www.instagram.com"><img src="../../assets/images/insta.png" alt="RC" height="80"
+                width="100" /></a>
           </div>
         </div>
       </div>
@@ -37,5 +31,6 @@
 
     <!-- Enlance externo al JavaScript de Prado -->
     <script src="../../assets/js/Andres_Prado.js"></script>
-  </body>
-</html>
+    </body>
+
+    </html>

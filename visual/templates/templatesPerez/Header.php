@@ -2,6 +2,7 @@
 
 <html lang="es">
   <!-- head -->
+
   <head>
     <!-- Browser tab tittle -->
     <title>ABJER | Salón de Eventos & Más</title>
@@ -11,17 +12,13 @@
     <meta name="keywords" content="Salón de eventos" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Bootstrap CSS -->
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
-      crossorigin="anonymous"
-    />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous" />
     <!-- CSS Style-->
-    <link rel="stylesheet" href="../../assets/css/style_master.css" />
-    <link rel="stylesheet" href="../../assets/css/PerezRenan.css" />
+    <link rel="stylesheet" href="assets/css/style_master.css" />
+    <link rel="stylesheet" href="assets/css/PerezRenan.css" />
     <!-- Javascript -->
-    <script src="../../assets/js/app.js" defer></script>
+    <script src="assets/js/app.js" defer></script>
     <!-- ICONO MENU -->
     <script src="https://kit.fontawesome.com/7f7aa7ef65.js" crossorigin="anonymous"></script>
     <!-- browser tab icon -->
@@ -31,16 +28,16 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap"
-      rel="stylesheet"
-    />
+      rel="stylesheet" />
   </head>
 
   <!-- body -->
+
   <body>
     <!-- header -->
     <header class="header">
       <nav class="menu">
-        <img class="logo" src="../../assets/images/logo.png" alt="logo" />
+        <img class="logo" src="assets/images/logo.png" alt="logo" />
         <aside>
           <h2 class="letra">A Beautiful Journey Event to Remember</h2>
           <span>Salón de Eventos & Más</span>
