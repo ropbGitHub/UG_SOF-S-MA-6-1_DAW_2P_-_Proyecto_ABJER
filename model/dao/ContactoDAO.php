@@ -8,7 +8,9 @@ class ContactoDAO {
         $this->con=Conexion::getConexion();
     }
 
-    public function listar(){}
+    public function listar(){
+        // sentencias SQL para listar
+    }
 
     public function insertar(){}
 

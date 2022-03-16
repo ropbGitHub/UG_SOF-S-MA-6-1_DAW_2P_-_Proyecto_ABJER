@@ -11,11 +11,11 @@
     <meta name="keywords" content="Salón de eventos" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- CSS Style-->
-    <link rel="stylesheet" href="../../assets/css/style_master.css" />
-    <link rel="stylesheet" href="../../assets/css/AlvearBilly.css" />
+    <link rel="stylesheet" href="assets/css/style_master.css" />
+    <link rel="stylesheet" href="assets/css/AlvearBilly.css" />
     <!-- Javascript -->
-    <script src="../../assets/js/app.js" defer></script>
-    <script src="../../assets/js/app_alvear.js" defer></script>
+    <script src="assets/js/app.js" defer></script>
+    <script src="assets/js/app_alvear.js" defer></script>
     <!-- ICONO MENU -->
     <script src="https://kit.fontawesome.com/7f7aa7ef65.js" crossorigin="anonymous"></script>
     <!-- browser tab icon-->
@@ -36,7 +36,7 @@
       <!--* copiar y pegar partes que se van a repetir a lo largo de todas las páginas-->
       <header class="header">
         <nav class="menu">
-          <img class="logo" src="../../assets/images/logo.png" alt="logo" />
+          <img class="logo" src="assets/images/logo.png" alt="logo" />
           <aside>
             <h2 class="letra">A Beautiful Journey Event to Remember</h2>
             <span>Salón de Eventos & Más</span>
@@ -53,7 +53,7 @@
               <a href="index.php?c=cotizar&a=index&p=cotizar"><strong class="peso">Servicios</strong></a>
             </li>
             <li>
-              <a href="MatamorosJoaquin.html"><strong class="peso">Q&A</strong></a>
+              <a href="index.php?c=qa&a=index&p=qa"><strong class="peso">Q&A</strong></a>
             </li>
             <li class="active">
               <a href="index.php?c=contacto&a=index&p=contacto"><strong class="peso">Contacto</strong></a>

@@ -8,7 +8,9 @@ class UsuarioDAO {
         $this->con=Conexion::getConexion();
     }
 
-    public function listar(){}
+    public function listar(){
+        
+    }
 
     public function insertar(){}
 

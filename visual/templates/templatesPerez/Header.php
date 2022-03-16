@@ -18,8 +18,8 @@
       crossorigin="anonymous"
     />
     <!-- CSS Style-->
-    <link rel="stylesheet" href="../../assets/css/style_master.css" />
-    <link rel="stylesheet" href="../../assets/css/PerezRenan.css" />
+    <link rel="stylesheet" href="../../../assets/css/style_master.css" />
+    <link rel="stylesheet" href="../../../assets/css/PerezRenan.css" />
     <!-- Javascript -->
     <script src="../../assets/js/app.js" defer></script>
     <!-- ICONO MENU -->
