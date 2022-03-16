@@ -2,6 +2,7 @@
 <html lang="es">
   <!--head-->
   <!--TODO copiar y pegar partes que se van a repetir a lo largo de todas las páginas-->
+
   <head>
     <!-- Browser tab tittle -->
     <title>ABJER | Salón de Eventos & Más</title>
@@ -19,17 +20,17 @@
     <!-- ICONO MENU -->
     <script src="https://kit.fontawesome.com/7f7aa7ef65.js" crossorigin="anonymous"></script>
     <!-- browser tab icon-->
-    <link rel="icon" href="../../assets/images/logo.png" />
+    <link rel="icon" href="assets/images/logo.png" />
     <!-- font external reference-->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap"
-      rel="stylesheet"
-    />
+      rel="stylesheet" />
   </head>
 
   <!--body-->
+
   <body>
     <div class="agrupar">
       <!-- header -->
