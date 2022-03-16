@@ -5,7 +5,7 @@
         <div class="box">
           <figure>
             <a href="#">
-              <img src="../../assets/images/icono.jpg" alt="logo" />
+              <img src="assets/images/icono.jpg" alt="logo" />
             </a>
           </figure>
         </div>
@@ -18,13 +18,13 @@
           <h2>SIGUENOS</h2>
           <div class="red-social">
             <a href="https://www.facebook.com"
-              ><img src="../../assets/images/face.png" alt="RF" height="80" width="100"
+              ><img src="assets/images/face.png" alt="RF" height="80" width="100"
             /></a>
             <a href="https://twitter.com"
-              ><img src="../../assets/images/tw.png" alt="RT" height="80" width="100"
+              ><img src="assets/images/tw.png" alt="RT" height="80" width="100"
             /></a>
             <a href="https://www.instagram.com"
-              ><img src="../../assets/images/insta.png" alt="RC" height="80" width="100"
+              ><img src="assets/images/insta.png" alt="RC" height="80" width="100"
             /></a>
           </div>
         </div>

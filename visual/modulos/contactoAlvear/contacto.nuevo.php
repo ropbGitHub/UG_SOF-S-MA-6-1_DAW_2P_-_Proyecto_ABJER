@@ -103,7 +103,4 @@
 </div> <!-- class="agrupar" tag close -->
 
 <!-- footer -->
-<?php require_once 'visual/templates/footer.php'; ?>
-</body>
-
-</html>
+<?php require_once 'visual/templates/templatesAlvear/footer.php'; ?>
