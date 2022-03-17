@@ -392,25 +392,48 @@
   font-size: 17px;
 }
 
-/* .datatable-container .header-tools{
+.datatable-container .header-tools{
   border-bottom: solid 1px var(--dt-border-color);
   padding: var(--dt-padding);
   display: flex;
-  align-items: baseline;
+  align-items: center;
+  justify-items: center;
 }
 
 .datatable-container .header-tools .search{
   width: 30%;
 }
 
+.datatable-container .header-tools .search form{
+  display: flex;
+  align-items: center;
+  justify-items: center;
+}
+
 .datatable-container .header-tools .search .search-input{
-  width: 100%;
+  width: 80%;
+  height: 30px;
   background-color: var(--dt-input-background-color);
-  display:block;
+  display:inline-block;
   box-sizing: border-box;
   border-radius: var(--dt-border-radius);
   border: solid 1px var(--dt-border-color);
   color: var(--dt-input-color);
+}
+
+.datatable-container .header-tools .search button{
+  color: var(--dt-text-color-button);
+  width: 10%;
+  box-sizing: border-box;
+  border: 0;
+  border-radius: var(--dt-border-radius);
+  background: transparent;
+  cursor: pointer;
+  padding: var(--dt-padding-s) var(--dt-padding);
+}
+
+.datatable-container .header-tools .search button :hover{
+  color: rgb(231, 162, 150);
 }
 
 .datatable-container .header-tools .tools{
@@ -443,9 +466,8 @@
 }
 
 .datatable-container .header-tools .tools ul li button :hover{
-   background: var(--dt-bg-active-button);
-   color: var(--dt-text-color-active-button);
-} */
+   color: rgb(231, 162, 150);
+}
 
 .datatable-container .datatable{
   border-collapse: collapse;

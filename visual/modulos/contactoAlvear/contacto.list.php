@@ -1,31 +1,25 @@
 <?php require_once 'visual/templates/templatesAlvear/Header.php'; ?>
 
+<h2>Tabla de Contactos ABJER</h2>
+
 <div class="datatable-container">
-    <!-- <div class="header-tools">
+    <div class="header-tools">
         <div class="tools">
             <ul>
-                <li><span><input type="checkbox"></span></li>
                 <li>
-                    <button>
-                        <i class="material-icons">add_circle</i>
-                    </button>
-                </li>
-                <li>
-                    <button>
-                        <i class="material-icons">edit</i>
-                    </button>
-                </li>
-                <li>
-                    <button>
-                        <i class="material-icons">delete</i>
-                    </button>
+                    <a href="index.php?c=contacto&f=nuevo"> 
+                        <button><i class="material-icons">add_circle</i></button>
+                    </a>
                 </li>
             </ul>
         </div>
         <div class="search">
-            <input type="text" name="" id="" class="search-input">
+            <form action="index.php?c=contacto&f=buscar" method="POST">
+                <input class="search-input" type="text" name="busqueda" id="busqueda"  placeholder="buscar..."/>
+                <button type="submit"><i class="material-icons">search</i></button>
+            </form> 
         </div>
-    </div> -->
+    </div>
 
     <table class="datatable">
         <thead>
