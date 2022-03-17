@@ -72,7 +72,7 @@ class QA {
     // Methods get y set parametrizados
     public function __set($nombre, $valor) {
         // Verifica que la propiedad exista
-        if (property_exists('Producto', $nombre)) {
+        if (property_exists('Formulario', $nombre)) {
             $this->$nombre = $valor;
         } else {
             echo $nombre . " No existe.";
@@ -81,7 +81,7 @@ class QA {
 
     public function __get($var) {
         // Verifica que exista la propiedad
-        if (property_exists('Producto', $var)) {
+        if (property_exists('Formulario', $var)) {
             return $this->$var;
         }
 // Retorna null si no existe
