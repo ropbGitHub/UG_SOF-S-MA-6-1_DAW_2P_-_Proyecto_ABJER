@@ -67,7 +67,7 @@ class QA {
     function setRespuesta($respuesta) {
         $this->respuesta = $respuesta;
     }
-    
+ /*   
     
     // Methods get y set parametrizados
     public function __set($nombre, $valor) {
@@ -86,7 +86,7 @@ class QA {
         }
 // Retorna null si no existe
         return NULL;
-    }
+    }*/
 
     
     

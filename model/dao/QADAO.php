@@ -8,7 +8,18 @@ class QADAO {
         $this->con=Conexion::getConexion();
     }
 
-    public function listar(){}
+    public function listar(){
+        // sql de la sentencia
+        $sql = "select * from formulario";
+        //preparacion de la sentencia
+        $stmt = $this->con->prepare($sql);
+        //ejecucion de la sentencia
+        $stmt->execute();
+        //recuperacion de resultados
+        $resultados = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        // retorna datos para el controlador
+        return $resultados;
+    }
 
     public function insertar(){}
 
