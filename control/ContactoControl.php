@@ -1,6 +1,7 @@
 <?php
     require_once 'model/dao/ContactoDAO.php';
-    
+    require_once 'model/dto/Contacto.php';
+
     class ContactoControl {
         private $model;
 
@@ -14,6 +15,6 @@
             //llamar al modelo
             $resultados=$this->model->listar();
             //llamar a la vista
-            require_once 'visual/modulos/contactoAlvear/contacto.nuevo.php';
+            require_once 'visual/modulos/contactoAlvear/contacto.list.php';
         }
     }
