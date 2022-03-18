@@ -9,19 +9,36 @@ class QADAO {
     }
 
     public function listar(){
-        // sql de la sentencia
-        $sql = "select * from formulario";
-        //preparacion de la sentencia
+        $sql = "select * from formulario"; //Sentencia
         $stmt = $this->con->prepare($sql);
-        //ejecucion de la sentencia
         $stmt->execute();
-        //recuperacion de resultados
         $resultados = $stmt->fetchAll(PDO::FETCH_ASSOC);
-        // retorna datos para el controlador
         return $resultados;
     }
 
-    public function insertar(){}
+    public function insertar($nombre, $apellido, $categoria, $tipoPreg, $pregunta, $respuesta){
+        $sql = "insert into formulario(nombre, apellidos, categoria, tipoPregunta, pregunta, respuesta) 
+        values(:nom, :ape,:cat,:tipoP,:pre, :res)";
+
+        //bind parameters
+        $sentencia = $this->con->prepare($sql);
+        $data = [
+            'nom'=>$nombre,
+            'ape' =>$apellido,
+            'cat' => $categoria,
+            'tipoP' =>$tipoPreg,
+            'pre' =>$pregunta,
+            'res' =>$respuesta
+        ];
+        //execute
+        $sentencia->execute($data);
+        //retornar resultados, 
+        if ($sentencia->rowCount() <= 0) {// verificar si se inserto 
+            //rowCount permite obtner el numero de filas afectadas
+            return false;
+        }
+        return true;
+    }
 
     public function actualizar(){}
 

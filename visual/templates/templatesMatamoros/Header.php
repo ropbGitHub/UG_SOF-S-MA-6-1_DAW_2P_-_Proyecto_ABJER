@@ -13,9 +13,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- CSS Style-->
     <link rel="stylesheet" href="assets/css/style_master.css" />
-    <link rel="stylesheet" href="assets/css/PradoAndres.css" />
+    <link rel="stylesheet" href="assets/css/AlvearBilly.css" />
     <!-- Javascript -->
     <script src="assets/js/app.js" defer></script>
+    <script src="assets/js/color.js" defer></script>
     <!-- ICONO MENU -->
     <script src="https://kit.fontawesome.com/7f7aa7ef65.js" crossorigin="anonymous"></script>
     <!-- browser tab icon-->
