@@ -14,6 +14,6 @@
             //llamar al modelo
             $resultados=$this->model->listar();
             //llamar a la vista
-            require_once 'visual/modulos/QAMatamoros/QA.nuevo.php'; //tiene que cambiar "nuevo"por "listar"
+            require_once 'visual/modulos/QAMatamoros/QA.list.php'; //tiene que cambiar "nuevo"por "listar"
         }
     }

@@ -13,7 +13,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- CSS Style-->
     <link rel="stylesheet" href="assets/css/style_master.css" />
-    <link rel="stylesheet" href="assets/css/MatamorosJoaquin.css" />
+    <link rel="stylesheet" href="assets/css/PradoAndres.css" />
     <!-- Javascript -->
     <script src="assets/js/app.js" defer></script>
     <!-- ICONO MENU -->
@@ -54,7 +54,7 @@
               <a href="index.php?c=cotizar&a=index&p=cotizar"><strong class="peso">Servicios</strong></a>
             </li>
             <li class="active">
-              <a href="MatamorosJoaquin.html"><strong class="peso">Q&A</strong></a>
+              <a href="index.php?c=qa&a=index&p=qa"><strong class="peso">Q&A</strong></a>
             </li>
             <li>
               <a href="index.php?c=contacto&a=index&p=contacto"><strong class="peso">Contacto</strong></a>
