@@ -65,21 +65,33 @@ inputs.forEach((input) => {
 });
 
 formulario.addEventListener('submit', (e) => {
-	e.preventDefault();
+ 	e.preventDefault();
 
-	const terminos = document.getElementById('terminos');
-	if(campos.cedula && campos.nombre && campos.correo && campos.telefono && terminos.checked ){
-		formulario.reset();
+ 	const terminos = document.getElementById('terminos');
+ 	if(campos.cedula && campos.nombre && campos.correo && campos.telefono && terminos.checked ){
 
-		document.getElementById('formulario__mensaje-exito').classList.add('formulario__mensaje-exito-activo');
-		setTimeout(() => {
-			document.getElementById('formulario__mensaje-exito').classList.remove('formulario__mensaje-exito-activo');
-		}, 5000);
+ 		document.getElementById('formulario__mensaje-exito').classList.add('formulario__mensaje-exito-activo');
+ 		setTimeout(() => {
+ 			document.getElementById('formulario__mensaje-exito').classList.remove('formulario__mensaje-exito-activo');
+ 		}, 5000);
 
-		document.querySelectorAll('.formulario__grupo-correcto').forEach((icono) => {
-			icono.classList.remove('formulario__grupo-correcto');
-		});
-	} else {
-		document.getElementById('formulario__mensaje').classList.add('formulario__mensaje-activo');
-	}
+ 		document.querySelectorAll('.formulario__grupo-correcto').forEach((icono) => {
+ 			icono.classList.remove('formulario__grupo-correcto');
+ 		});
+
+		
+			var request = (window.XMLHttpRequest) ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
+
+			var ajaxUrl  = "index.php?c=contacto&f=nuevo";
+			var formElement = document.querySelector("#formulario");
+			var formDatos= new FormData(formElement); 
+			request.open("POST",ajaxUrl ,true);
+			request.send(formDatos);
+
+			formulario.reset();
+			window.location.replace("index.php?c=contacto&f=index");
+		
+ 	} else {
+ 		document.getElementById('formulario__mensaje').classList.add('formulario__mensaje-activo');
+ 	}
 });
