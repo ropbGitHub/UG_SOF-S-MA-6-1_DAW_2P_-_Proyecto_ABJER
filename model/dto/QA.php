@@ -2,7 +2,6 @@
 
 class QA {
 
-
     public $id, $nombre, $apellidos, $categoria, $tipoPregunta, 
     $pregunta, $respuesta;
 

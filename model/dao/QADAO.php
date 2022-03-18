@@ -10,7 +10,7 @@ class QADAO {
 
     public function listar(){
         // sql de la sentencia
-        $sql = "SELECT * from formulario";
+        $sql = "select * from formulario";
         //preparacion de la sentencia
         $stmt = $this->con->prepare($sql);
         //ejecucion de la sentencia
