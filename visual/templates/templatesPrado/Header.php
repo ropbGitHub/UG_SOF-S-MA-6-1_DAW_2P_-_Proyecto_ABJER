@@ -19,7 +19,7 @@
     <!-- ICONO MENU -->
     <script src="https://kit.fontawesome.com/7f7aa7ef65.js" crossorigin="anonymous"></script>
     <!-- browser tab icon-->
-    <link rel="icon" href="../../assets/images/logo.png" />
+    <link rel="icon" href="assets/images/logo.png" />
     <!-- font external reference-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com" />

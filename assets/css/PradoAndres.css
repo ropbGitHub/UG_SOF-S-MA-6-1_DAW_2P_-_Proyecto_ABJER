@@ -73,6 +73,32 @@ input.texto_formulario_prado {
 }
 
 /*!--------------------DECORACION DE LA TABLA-------------------------!*/
+
+:root{
+  --primary-color: white;
+  --secondary-color:rgb(61,68,73);
+  --highlight-color: #3282b8;
+
+  --dt-padding: 12px;
+  --dt-padding-s: 6px;
+  --dt-padding-xs: 2px;
+
+  --dt-border-radius:3px;
+
+  --dt-background-color-container: #2a3338;
+  --dt-border-color: var(--secondary-color);
+  --dt-bg-color: var(--highlight-color);
+  --dt-text-color: var(--primary-color);
+  --dt-bg-active-button: var(--highlight-color);
+  --dt-text-color-button: var(--primary-color);
+  --dt-text-color-active-button: var(--primary-color);
+  --dt-hover-cell-color: var(--highlight-color);
+  --dt-even-row-color: var(--secondary-color);
+  --dt-focus-color: var(--highlight-color);
+  --dt-input-background-color: var(--secondary-color);
+  --dt-input-color: var(--primary-color);
+}
+
 .material-icons{
   font-size: 16px;
   color: var(--primary-color);
@@ -196,4 +222,189 @@ input.texto_formulario_prado {
 
 .datatable-container .datatable tbody tr td i:hover{
   color: rgb(231, 162, 150);
+}
+
+
+
+.container {
+  width: 100vw;
+  max-width: 1920px;
+  display: grid;
+  /* grid-gap: 20px; */
+  grid-template-rows: repeat(3, auto);
+  grid-template-areas:
+    "header"
+    "main"
+    "abajo";
+}
+
+.main {
+  width: 100vw;
+  max-width: 1920px;
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(3, auto);
+  grid-template-areas:
+    "mansion mansion"
+    "mapa ubicanos"
+    "parrafo parrafo";
+}
+
+.main .mansion {
+  grid-area: mansion;
+}
+
+.main .mapa {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  grid-area: mapa;
+  text-align: center;
+}
+
+.main .ubicanos {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  grid-area: ubicanos;
+  padding-left: 10%;
+  text-align: left;
+}
+
+.main .parrafo {
+  width: 80%;
+  grid-area: parrafo;
+  justify-self: center;
+  padding-top: 2%;
+}
+
+.parrafo .centrar {
+  text-align: center;
+}
+
+.container .header {
+  margin: 0;
+  padding: 0;
+  grid-area: header;
+}
+
+.container .main {
+  grid-area: main;
+}
+
+.container .abajo {
+  grid-area: abajo;
+}
+
+#foto {
+  width: 100vw;
+  max-width: 1920px;
+}
+
+.light {
+  font-size: 15pt;
+}
+
+@media screen and (max-width: 858px) {
+  .container {
+    grid-template-areas:
+      "header"
+      "main"
+      "abajo";
+  }
+  .main {
+    width: 100vw;
+    max-width: 100vw;
+    grid-gap: 0%;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(4, auto);
+    grid-template-areas:
+      "mansion mansion"
+      "mapa mapa"
+      "ubicanos ubicanos"
+      "parrafo parrafo";
+  }
+  .mapa h2{
+    margin-top: 0;
+  }
+  .main .mapa iframe{
+    width: 80vw;
+  }
+  .peso {
+    font-size: 15pt;
+  }
+  .ubicanos h2 {
+    margin-top: 0;
+  }
+  .ubicanos .light {
+    font-size: 14pt;
+  }
+  .parrafo p {
+    font-size: 14pt;
+  }
+}
+
+/*---------------------------BOTON-------------------------*/
+.boton {
+  display: inline-block;
+  align-items: center;
+  justify-content: center;
+  width: 330px;
+  height: 80px;
+  background: #141414;
+  color: #fff;
+  font-size: 20px;
+  border: none;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: 0.3s;
+  border-radius: 5px;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.boton span {
+  font-weight: 700;
+  transition: 0.4s ease-in-out all;
+  position: absolute;
+  left: 30%;
+  top: 35%;
+}
+
+.boton .icono_btn {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  /* z-index: -1; */
+  left: -40px;
+  transition: 0.3s ease-in-out all;
+  opacity: 0;
+  top: 40%;
+}
+
+.boton i {
+  color: #fff;
+  width: 35px;
+  height: 35px;
+}
+
+.boton:hover {
+  background: #0066ff;
+}
+
+.boton:hover .icono_btn {
+  left: 85.5%;
+  opacity: 1;
+}
+
+.boton:hover span {
+  left: 20px;
+}
+
+.boton:active {
+  width: 375px;
+  height: 50px;
+  transition: 0.4s ease-in-out all;
 }
