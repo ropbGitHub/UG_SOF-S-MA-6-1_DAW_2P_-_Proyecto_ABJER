@@ -1,87 +1,91 @@
+const formulario = document.getElementById('formulario');
+const inputs = document.querySelectorAll('#formulario input');
 
-/*---------------------------FORMULARIO-VALIDACIONES-------------------------*/
-var form = document.querySelector("#formContacto");
-form.addEventListener('submit', validar);
-let cont=0;
-/*---------------------------INICIO-------------------------*/
-function validar(event) {
-    var resultado = true;
-    var txtNombres = document.getElementById("nombres");
-    var txtApellidos = document.getElementById("apellidos");
-    var selectEstado = document.getElementById("seleccion");
-    var radiosGenero = document.getElementsByName("tipo");
-    var chkSuscrip = document.getElementById("check");
-    var letra = /^[a-z ,.'-]+$/i;
-    limpiarMensajes();  
-/*---------------------------PRIMER RECUADRO-------------------------*/    
-    //validacion para nombres
-    if (txtNombres.value === '') {
-        resultado = false;
-        mensaje("Nombre es requerido", txtNombres);
-    } else if (!letra.test(txtNombres.value)) {
-        resultado = false;
-        mensaje("Nombre solo debe contener letras", txtNombres);
-    } else if (txtNombres.value.length > 20) {
-        resultado = false;
-        mensaje("Nombre maximo 20 caracteres", txtNombres);
-    }
-    
-    //validacion para apellidos
-    if (txtApellidos.value === '') {
-        resultado = false;
-        mensaje("Apellido es requerido", txtApellidos);
-    } else if (!letra.test(txtApellidos.value)) {
-        resultado = false;
-        mensaje("Apellido solo debe contener letras", txtApellidos);
-    } else if (txtApellidos.value.length > 20) {
-        resultado = false;
-        mensaje("Apellido maximo 20 caracteres", txtApellidos);
-    }
-
-/*---------------------------SEGUNDO RECUADRO-------------------------*/   
-    //seleccion
-    if (selectEstado.value === null || selectEstado.value === '0') {
-        resultado = false;
-        mensaje("Debe seleccionar su categoria", selectEstado);
-    }
-    
-/*---------------------------TERCER RECUADRO-------------------------*/   
-    //radio button
-    var sel = false;
-    for (let i = 0; i < radiosGenero.length; i++) {
-        if (radiosGenero[i].checked) {
-            sel = true;
-            let res=radiosGenero[i].value;
-            break;
-        }
-    }
-    if (!sel) {
-        resultado = false;
-        mensaje("Debe seleccionar un tipo", radiosGenero[0]);
-    }
-    
-/*---------------------------QUINTO RECUADRO-------------------------*/
-    //validacion de un checkbox
-    if(!chkSuscrip.checked){
-     resultado=false;
-     mensaje("Aceptar Terminos", chkSuscrip);
-     }     
-     
-    if(!resultado){
-        event.preventDefault();  // detener el evento  //stop form from submitting
-    }
- }
- 
- function mensaje(cadenaMensaje, elemento) {
-    elemento.focus();
-    var nodoPadre = elemento.parentNode;
-    var nodoMensaje = document.createElement("span");
-    nodoMensaje.textContent = cadenaMensaje;
-    //nodoMensaje.style.color = "red";
-    //nodoMensaje.display = "block";
-    nodoMensaje.setAttribute("class", "mensajeError");
-    nodoPadre.appendChild(nodoMensaje);
+const expresiones = {
+    nombre: /^[a-zA-ZÀ-ÿ\s]{1,40}$/,
+    apellido: /^[a-zA-ZÀ-ÿ\s]{1,40}$/,
+    pregunta: /^[a-zA-ZÀ-ÿ\s]{1,40}$/,
+    respuesta: /^[a-zA-ZÀ-ÿ\s]{1,40}$/,
 }
+
+const campos = {
+    nombre: false,
+    apellido: false,
+    pregunta: false,
+    respuesta: false
+}
+
+const validarFormulario = (e) => {
+    switch (e.target.name) {
+        case "nombre":
+            validarCampo(expresiones.nombre, e.target, 'nombre');
+            break;
+        case "apellido":
+            validarCampo(expresiones.apellido, e.target, 'apellido');
+            break;
+        case "pregunta":
+            validarCampo(expresiones.pregunta, e.target, 'pregunta');
+            break;
+        case "respuesta":
+            validarCampo(expresiones.respuesta, e.target, 'respuesta');
+            break;
+    }
+}
+
+const validarCampo = (expresion, input, campo) => {
+    if (expresion.test(input.value)) {
+        document.getElementById(`grupo__${campo}`).classList.remove('formulario__grupo-incorrecto');
+        document.getElementById(`grupo__${campo}`).classList.add('formulario__grupo-correcto');
+        document.querySelector(`#grupo__${campo} i`).classList.add('fa-check-circle');
+        document.querySelector(`#grupo__${campo} i`).classList.remove('fa-times-circle');
+        document.querySelector(`#grupo__${campo} .formulario__input-error`).classList.remove('formulario__input-error-activo');
+        campos[campo] = true;
+    } else {
+        document.getElementById(`grupo__${campo}`).classList.add('formulario__grupo-incorrecto');
+        document.getElementById(`grupo__${campo}`).classList.remove('formulario__grupo-correcto');
+        document.querySelector(`#grupo__${campo} i`).classList.add('fa-times-circle');
+        document.querySelector(`#grupo__${campo} i`).classList.remove('fa-check-circle');
+        document.querySelector(`#grupo__${campo} .formulario__input-error`).classList.add('formulario__input-error-activo');
+        campos[campo] = false;
+    }
+}
+
+inputs.forEach((input) => {
+    input.addEventListener('keyup', validarFormulario);
+    input.addEventListener('blur', validarFormulario);
+});
+
+formulario.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    const terminos = document.getElementById('terminos');
+    if (campos.nombre && campos.apellido && campos.pregunta && campos.respuesta) {
+
+        document.getElementById('formulario__mensaje-exito').classList.add('formulario__mensaje-exito-activo');
+        setTimeout(() => {
+            document.getElementById('formulario__mensaje-exito').classList.remove('formulario__mensaje-exito-activo');
+        }, 5000);
+
+        document.querySelectorAll('.formulario__grupo-correcto').forEach((icono) => {
+            icono.classList.remove('formulario__grupo-correcto');
+        });
+
+
+        var request = (window.XMLHttpRequest) ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
+
+        var ajaxUrl = "index.php?c=qa&f=nuevo";
+        var formElement = document.querySelector("#formulario");
+        var formDatos = new FormData(formElement);
+        request.open("POST", ajaxUrl, true);
+        request.send(formDatos);
+
+        formulario.reset();
+        window.location.replace("index.php?c=qa&f=index");
+
+    } else {
+        document.getElementById('formulario__mensaje').classList.add('formulario__mensaje-activo');
+    }
+});
 
 function limpiarMensajes() {
     var mensajes = document.querySelectorAll(".mensajeError");

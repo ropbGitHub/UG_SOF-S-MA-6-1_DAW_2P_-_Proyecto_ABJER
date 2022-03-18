@@ -52,4 +52,24 @@
                 require_once 'visual/modulos/QAMatamoros/QA.nuevo.php';
             }
         }
+
+        public function eliminar(){
+        
+            //leeer parametros
+               $id= $_REQUEST['id'];//$_SESSION['usuario'];
+            //comunicando con el modelo
+            $exito = $this->model->eliminar($id);
+            $msj = 'Eliminado exitosamente';
+               $color = 'primary';
+               if (!$exito) {
+                   $msj = "No se pudo eliminar";
+                   $color = "danger";
+               }
+                if(!isset($_SESSION)){ session_start();};
+               $_SESSION['mensaje'] = $msj;
+               $_SESSION['color'] = $color;
+           //llamar a la vista
+               //  $this->index();
+                  header('Location:index.php?c=qa&f=index');
+       }
     }

@@ -42,7 +42,25 @@ class QADAO {
 
     public function actualizar(){}
 
-    public function eliminar(){}
+    public function eliminar($id){
+        //prepare
+        $sql = "delete FROM formulario
+        WHERE id = :id";
+        //now());
+        //bind parameters
+        $sentencia = $this->con->prepare($sql);
+        $data = [
+        'id' => $id
+        ];
+        //execute
+        $sentencia->execute($data);
+        //retornar resultados, 
+        if ($sentencia->rowCount() <= 0) {// verificar si se inserto 
+        //rowCount permite obtner el numero de filas afectadas
+        return false;
+        }
+        return true;
+    }
 
     public function buscar(){}
 }

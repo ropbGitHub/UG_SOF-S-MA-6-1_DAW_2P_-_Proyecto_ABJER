@@ -12,9 +12,7 @@
         <input type="text" class="formulario__input" name="txtNombre" id="nombre" placeholder="Fernando" />
         <i class="formulario__validacion-estado fas fa-times-circle"></i>
       </div>
-      <p class="formulario__input-error">
-        Este campo y solo puede contener letras.
-      </p>
+      <p class="formulario__input-error">Este campo y solo puede contener letras.</p>
     </div>
 
     <!-- Grupo: APELLIDO -->
@@ -24,9 +22,7 @@
         <input type="text" class="formulario__input" name="txtApellido" id="apellido" placeholder="Matamoros" />
         <i class="formulario__validacion-estado fas fa-times-circle"></i>
       </div>
-      <p class="formulario__input-error">
-        Este campo y solo puede contener letras.
-      </p>
+      <p class="formulario__input-error">Este campo y solo puede contener letras.</p>
     </div>
 
     <!-- Grupo: CATEGORIA -->
@@ -52,9 +48,7 @@
         <br>
         <i class="formulario__validacion-estado fas fa-times-circle"></i>
       </div>
-      <p class="formulario__input-error">
-        Debe tener un máximo de 15 palabras.
-      </p>
+      <p class="formulario__input-error">Debe tener un máximo de 15 palabras.</p>
     </div>
 
       <!-- Grupo: RESPUESTA -->
@@ -65,9 +59,7 @@
         <br>
         <i class="formulario__validacion-estado fas fa-times-circle"></i>
       </div>
-      <p class="formulario__input-error">
-        Debe tener respuesta.
-      </p>
+      <p class="formulario__input-error">Debe tener respuesta.</p>
     </div>
 
         <!-- Grupo: TIPO_PREGUNTA -->
@@ -79,15 +71,20 @@
         <input type="radio" class="formulario__input" name="radPreg" id="tipoPregunta" value="Otros">Otros<br/>
         <i class="formulario__validacion-estado fas fa-times-circle"></i>
       </div>
-      <p class="formulario__input-error">
-        Seleccione un tipo.
-      </p>
+      <p class="formulario__input-error">Seleccione un tipo.</p>
+    </div>
+
+    <!-- Grupo: Terminos y Condiciones -->
+    <div class="formulario__grupo" id="grupo__terminos">
+      <label class="formulario__label">
+        <input class="formulario__checkbox" type="checkbox" name="terminos" id="terminos" />
+        Acepto los Terminos y Condiciones *
+      </label>
     </div>
 
     <div class="formulario__mensaje" id="formulario__mensaje">
       <p>
-        <i class="fas fa-exclamation-triangle"></i> <b>Error:</b> Por favor rellena el
-        formulario correctamente.
+        <i class="fas fa-exclamation-triangle"></i> <b>Error:</b> Por favor rellena el formulario correctamente.
       </p>
     </div>
 
