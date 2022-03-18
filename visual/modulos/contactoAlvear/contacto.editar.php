@@ -3,12 +3,16 @@
 <main class="main_form">
   <p class="par_formulario">Contáctese con Nosotros</p>
   <br />
-  <form action="index.php?c=contacto&f=nuevo" method="POST" class="formulario" id="formulario">
+  <form action="index.php?c=contacto&f=editar" method="POST" class="formulario" id="formulario">
+    
+    <!--ID_OCULTO-->
+        <input type="hidden" class="formulario__input" name="id" id="id" value="<?php echo $prod['ID_CONTACTO']; ?>"/>
+
     <!-- Grupo: Cedula -->
     <div class="formulario__grupo" id="grupo__cedula">
       <label for="cedula" class="formulario__label">Cédula *</label>
       <div class="formulario__grupo-input">
-        <input type="text" class="formulario__input" name="cedula" id="cedula" placeholder="0999999992" />
+        <input type="text" class="formulario__input" name="cedula" id="cedula" placeholder="0999999992" value="<?php echo $prod['cedula']; ?>"/>
         <i class="formulario__validacion-estado fas fa-times-circle"></i>
       </div>
       <p class="formulario__input-error">
@@ -20,7 +24,7 @@
     <div class="formulario__grupo" id="grupo__nombre">
       <label for="nombre" class="formulario__label">Nombre *</label>
       <div class="formulario__grupo-input">
-        <input type="text" class="formulario__input" name="nombre" id="nombre" placeholder="Billy Alvear" />
+        <input type="text" class="formulario__input" name="nombre" id="nombre" placeholder="Billy Alvear" value="<?php echo $prod['nombre']; ?>"/>
         <i class="formulario__validacion-estado fas fa-times-circle"></i>
       </div>
       <p class="formulario__input-error">
@@ -32,7 +36,7 @@
     <div class="formulario__grupo" id="grupo__fecha">
       <label for="fecha" class="formulario__label">Fecha</label>
       <div class="formulario__grupo-input">
-        <input type="date" class="formulario__input" name="fecha" id="fecha" />
+        <input type="date" class="formulario__input" name="fecha" id="fecha"/>
         <i class="formulario__validacion-estado fas fa-times-circle"></i>
       </div>
       <p class="formulario__input-error">Elija una fecha para contactarlo.</p>
@@ -43,12 +47,15 @@
       <label for="motivo" class="formulario__label">Motivo</label>
       <div class="formulario__grupo-input">
         <select id="motivo" name="motivo" class="formulario__input">
-          <?php foreach ($motivo as $mov) {
-          ?>
-            <option value="<?php echo $mov->ID_MOTIVO ?>"><?php echo $mov->descripcion; ?></option>
             <?php
-          }
-          ?>
+                foreach ($motivo as $mov) {
+                    $selected='';
+                    if($mov->ID_MOTIVO == $prod['motivo']){
+                            $selected='selected="selected"';
+                    }
+                    echo  "<option ".$selected." value='".$mov->ID_MOTIVO."'>".$mov->descripcion."</option>";
+                }
+            ?>
         </select>
         <i class="formulario__validacion-estado fas fa-times-circle"></i>
       </div>
@@ -59,7 +66,7 @@
     <div class="formulario__grupo" id="grupo__correo">
       <label for="correo" class="formulario__label">Correo Electrónico *</label>
       <div class="formulario__grupo-input">
-        <input type="email" class="formulario__input" name="correo" id="correo" placeholder="correo@correo.com" />
+        <input type="email" class="formulario__input" name="correo" id="correo" placeholder="correo@correo.com" value="<?php echo $prod['correo']; ?>"/>
         <i class="formulario__validacion-estado fas fa-times-circle"></i>
       </div>
       <p class="formulario__input-error">
@@ -71,7 +78,7 @@
     <div class="formulario__grupo" id="grupo__telefono">
       <label for="telefono" class="formulario__label">Teléfono *</label>
       <div class="formulario__grupo-input">
-        <input type="text" class="formulario__input" name="telefono" id="telefono" placeholder="4491234567" />
+        <input type="text" class="formulario__input" name="telefono" id="telefono" placeholder="4491234567" value="<?php echo $prod['telefono']; ?>"/>
         <i class="formulario__validacion-estado fas fa-times-circle"></i>
       </div>
       <p class="formulario__input-error">

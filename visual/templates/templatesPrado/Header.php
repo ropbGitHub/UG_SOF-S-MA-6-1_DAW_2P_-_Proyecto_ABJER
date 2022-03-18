@@ -54,7 +54,7 @@
               <a href="index.php?c=cotizar&a=index&p=cotizar"><strong class="peso">Servicios</strong></a>
             </li>
             <li>
-              <a href="MatamorosJoaquin.html"><strong class="peso">Q&A</strong></a>
+              <a href="index.php?c=qa&a=index&p=qa"><strong class="peso">Q&A</strong></a>
             </li>
             <li>
               <a href="index.php?c=contacto&a=index&p=contacto"><strong class="peso">Contacto</strong></a>
