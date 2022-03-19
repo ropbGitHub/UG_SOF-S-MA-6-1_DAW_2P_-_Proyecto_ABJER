@@ -1,89 +1,81 @@
 <?php require_once 'visual/templates/templatesMatamoros/Header.php'; ?>
 
 <main class="main_form">
-  <p class="par_formulario">Contáctese con Nosotros</p>
+  <p class="par_formulario">AGREGAR PREGUNTA</p>
   <br />
-  <form action="index.php?c=contacto&f=editar" method="POST" class="formulario" id="formulario">
+  <form action="index.php?c=qa&f=editar" method="POST" class="formulario" id="formulario">
     
     <!--ID_OCULTO-->
-        <input type="hidden" class="formulario__input" name="id" id="id" value="<?php echo $prod['ID_CONTACTO']; ?>"/>
+        <input type="hidden" class="formulario__input" name="id" id="id" value="<?php echo $prod['id']; ?>"/>
 
-    <!-- Grupo: Cedula -->
-    <div class="formulario__grupo" id="grupo__cedula">
-      <label for="cedula" class="formulario__label">Cédula *</label>
-      <div class="formulario__grupo-input">
-        <input type="text" class="formulario__input" name="cedula" id="cedula" placeholder="0999999992" value="<?php echo $prod['cedula']; ?>"/>
-        <i class="formulario__validacion-estado fas fa-times-circle"></i>
-      </div>
-      <p class="formulario__input-error">
-        La cédula tiene que ser de 10 dígitos y solo puede contener numeros.
-      </p>
-    </div>
-
-    <!-- Grupo: Nombre -->
+    <!-- Grupo: NOMBRE -->
     <div class="formulario__grupo" id="grupo__nombre">
-      <label for="nombre" class="formulario__label">Nombre *</label>
+      <label for="nombre" class="formulario__label">NOMBRE *</label>
       <div class="formulario__grupo-input">
-        <input type="text" class="formulario__input" name="nombre" id="nombre" placeholder="Billy Alvear" value="<?php echo $prod['nombre']; ?>"/>
+        <input type="text" class="formulario__input" name="nombre" id="nombre" placeholder="Fernando" />
         <i class="formulario__validacion-estado fas fa-times-circle"></i>
       </div>
-      <p class="formulario__input-error">
-        El nombre tiene que ser de 4 a 16 caracteres y solo puede contener letras.
-      </p>
+      <p class="formulario__input-error">Este campo y solo puede contener letras.</p>
     </div>
 
-    <!-- Grupo: Fecha -->
-    <div class="formulario__grupo" id="grupo__fecha">
-      <label for="fecha" class="formulario__label">Fecha</label>
+    <!-- Grupo: APELLIDO -->
+    <div class="formulario__grupo" id="grupo__apellido">
+      <label for="apellido" class="formulario__label">APELLIDO *</label>
       <div class="formulario__grupo-input">
-        <input type="date" class="formulario__input" name="fecha" id="fecha"/>
+        <input type="text" class="formulario__input" name="apellido" id="apellido" placeholder="Matamoros" />
         <i class="formulario__validacion-estado fas fa-times-circle"></i>
       </div>
-      <p class="formulario__input-error">Elija una fecha para contactarlo.</p>
+      <p class="formulario__input-error">Este campo y solo puede contener letras.</p>
     </div>
 
-    <!-- Grupo: Motivo -->
-    <div class="formulario__grupo" id="grupo__motivo">
-      <label for="motivo" class="formulario__label">Motivo</label>
+    <!-- Grupo: CATEGORIA -->
+    <div class="formulario__grupo" id="grupo__categoria">
+      <label for="categoria" class="formulario__label">CATEGORIA *</label>
       <div class="formulario__grupo-input">
-        <select id="motivo" name="motivo" class="formulario__input">
-            <?php
-                foreach ($motivo as $mov) {
-                    $selected='';
-                    if($mov->ID_MOTIVO == $prod['motivo']){
-                            $selected='selected="selected"';
-                    }
-                    echo  "<option ".$selected." value='".$mov->ID_MOTIVO."'>".$mov->descripcion."</option>";
-                }
-            ?>
+        <select id="categoria" name="cbxCategoria" class="formulario__input">
+            <option value="Seleccione">Seleccione</option>
+            <option value="Binaria">Binaria</option>
+            <option value="Categorica">Categorica</option>
+            <option value="Informativa">Informativa</option>
         </select>
         <i class="formulario__validacion-estado fas fa-times-circle"></i>
       </div>
-      <p class="formulario__input-error">Elija un motivo de contacto.</p>
+      <!--  -->
+      <p class="formulario__input-error">Elija una categoria.</p>
     </div>
 
-    <!-- Grupo: Correo Electronico -->
-    <div class="formulario__grupo" id="grupo__correo">
-      <label for="correo" class="formulario__label">Correo Electrónico *</label>
+      <!-- Grupo: PREGUNTA -->
+      <div class="formulario__grupo" id="grupo__pregunta">
+      <label for="pregunta" class="formulario__label">PREGUNTA *</label>
       <div class="formulario__grupo-input">
-        <input type="email" class="formulario__input" name="correo" id="correo" placeholder="correo@correo.com" value="<?php echo $prod['correo']; ?>"/>
+        <textarea class="formulario__input" name="txaPregunta" id="pregunta" rows=6 cols=50 placeholder="¿De qué color son las paredes?"></textarea>
+        <br>
         <i class="formulario__validacion-estado fas fa-times-circle"></i>
       </div>
-      <p class="formulario__input-error">
-        El correo solo puede contener letras, numeros, puntos, guiones y guion bajo.
-      </p>
+            <!-- <p class="formulario__input-error">Debe tener un máximo de 15 palabras.</p> -->
     </div>
 
-    <!-- Grupo: Teléfono -->
-    <div class="formulario__grupo" id="grupo__telefono">
-      <label for="telefono" class="formulario__label">Teléfono *</label>
+      <!-- Grupo: RESPUESTA -->
+      <div class="formulario__grupo" id="grupo__respuesta">
+      <label for="respuesta" class="formulario__label">RESPUESTA *</label>
       <div class="formulario__grupo-input">
-        <input type="text" class="formulario__input" name="telefono" id="telefono" placeholder="4491234567" value="<?php echo $prod['telefono']; ?>"/>
+        <textarea class="formulario__input" name="txaRespuesta" id="respuesta" rows=6 cols=50 placeholder="Las paredes son azules :3"></textarea>
+        <br>
         <i class="formulario__validacion-estado fas fa-times-circle"></i>
       </div>
-      <p class="formulario__input-error">
-        El teléfono tiene que ser de 10 dígitos y solo puede contener numeros.
-      </p>
+            <!-- <p class="formulario__input-error">Debe tener respuesta.</p> -->
+    </div>
+
+        <!-- Grupo: TIPO_PREGUNTA -->
+        <div class="formulario__grupo" id="grupo__tipoPregunta">
+      <label for="tipoPregunta" class="formulario__label">TIPO PREGUNTA *</label>
+      <div class="formulario__grupo-input">
+        <input type="radio" class="formulario__input" name="tipoPregunta" id="tipoPregunta" value="Espacio">Espacio<br/>
+        <input type="radio" class="formulario__input" name="tipoPregunta" id="tipoPregunta" value="Precio">Precio<br/>
+        <input type="radio" class="formulario__input" name="tipoPregunta" id="tipoPregunta" value="Otros">Otros<br/>
+        <i class="formulario__validacion-estado fas fa-times-circle"></i>
+      </div>
+            <!-- <p class="formulario__input-error">Seleccione un tipo.</p> -->
     </div>
 
     <!-- Grupo: Terminos y Condiciones -->
@@ -96,8 +88,7 @@
 
     <div class="formulario__mensaje" id="formulario__mensaje">
       <p>
-        <i class="fas fa-exclamation-triangle"></i> <b>Error:</b> Por favor rellena el
-        formulario correctamente.
+        <i class="fas fa-exclamation-triangle"></i> <b>Error:</b> Por favor rellena el formulario correctamente.
       </p>
     </div>
 
