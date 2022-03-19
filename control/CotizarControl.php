@@ -38,13 +38,13 @@
                 $correo = htmlentities($_POST['email']);
                 $cantPer = htmlentities($_POST['cantidad_per']);
                 $fecha = htmlentities($_POST['fecha']);
-                $tipoSalon = isset($_POST['salon']) ? htmlentities($_POST['salon']) : '';
-                $tipoServicio = $_POST['servicio'];
+                $tipoSalon = isset($_POST['radSalon']) ? htmlentities($_POST['radSalon']) : '';
+                $tipoServicio = $_POST['tipoSer'];
                 $chktServ = implode(",", $tipoServicio);
                
                 //echo "<script>alert('msjBilly');</script>";
                 //llamar al modelo
-                $exito = $this->model->insertar($nombre, $apellido,$correo, $cantPer, $tipoSalon, $tipoServicio, $chktServ);
+                $exito = $this->model->insertar($nombre, $apellido,$correo, $cantPer, $fecha, $tipoSalon, $chktServ);
                 $msj = 'Cotizacion guardado exitosamente';
                 $color = 'primary';
                 if (!$exito) {
