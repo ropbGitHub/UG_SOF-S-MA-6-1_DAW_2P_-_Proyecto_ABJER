@@ -2,7 +2,7 @@
 class Conexion {
     public static function getConexion() {
         $database_username = 'root';
-        $database_password = '12345';
+        $database_password = '';
         $dbname = "bdevento";
         $dsn = 'mysql:host=localhost;dbname=' . $dbname;
         $conexion = null;
