@@ -1,0 +1,61 @@
+<?php require_once 'visual/templates/templatesPerez/Header.php'; ?>
+
+<!-- main-->
+<main class="container pb-5">
+
+  <div class="cabecera">
+    <h2>Registro de Usuario</h2>
+  </div>
+
+  <form>
+    <input type="text">
+    <button class="btn btn-primary btn-lg" id="button_search" type="summit">Buscar</button>
+  </form>
+
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>USERNAME</th>
+        <th>EMAIL</th>
+        <th>BIRTHDAY</th>
+        <th>NATIONALITY</th>
+        <th>PASSWORD</th>
+      </tr>
+    </thead>
+    <tbody>
+      <?php
+      $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+      foreach ($rows as $row) {
+      ?>
+      <tr>
+        <td><?php echo $row['id_user'] ?></td>
+        <td><?php echo $row['username'] ?></td>
+        <td><?php echo $row['email'] ?></td>
+        <td><?php echo $row['birthday'] ?></td>
+        <td><?php echo $row['nationality'] ?></td>
+        <td><?php echo $row['password'] ?></td>
+        <td>
+          <!-- Passing "id" with value of id_user -->
+          <a href="../Registrarse_RPB/sign_in-update.php?id=<?php echo $row['id_user'] ?>">Actualizar</a>
+          <a href="../Registrarse_RPB/sign_in-delete.php?id=<?php echo $row['id_user'] ?>">Eliminar</a>
+        </td>
+      </tr>
+      <?php } ?>
+    </tbody>
+  </table>
+
+</main>
+
+<?php require_once 'visual/templates/footer.php'; ?>
+
+<!-- Bootstrap JS: Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
+  integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
+  integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+<script src="assets/js/PerezRenan.js"></script>
+
+</body>
+
+</html>

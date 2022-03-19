@@ -1,6 +1,6 @@
 <?php
 
-class Contacto {
+class Usuario {
 
   // 
   public $id, $username, $email, $birthday, $nationality, $password;
