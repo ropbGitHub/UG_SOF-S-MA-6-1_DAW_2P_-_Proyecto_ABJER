@@ -20,10 +20,10 @@
         public function nuevo() {
             if ($_SERVER['REQUEST_METHOD'] == 'POST') {// guardar
                 // leer parametros
-                $nombre = htmlentities($_POST['txtNombre']);
-                $apellido = htmlentities($_POST['txtApellido']);
+                $nombre = htmlentities($_POST['nombre']);
+                $apellido = htmlentities($_POST['apellido']);
                 $categoria = htmlentities($_POST['cbxCategoria']);
-                $tipoPreg =isset($_POST['radPreg'])? htmlentities($_POST['radPreg']):'';
+                $tipoPreg =isset($_POST['tipoPregunta'])? htmlentities($_POST['tipoPregunta']):'';
                 $pregunta = htmlentities($_POST['txaPregunta']);
                 $respuesta = htmlentities($_POST['txaRespuesta']);
                
@@ -47,8 +47,7 @@
                 require_once 'model/dao/QADAO.php';
                 $mod = new QADAO();
                 $motivo = $mod->listar();
-    
-                // mostrar el formulario de nuevo producto
+
                 require_once 'visual/modulos/QAMatamoros/QA.nuevo.php';
             }
         }
@@ -72,4 +71,55 @@
                //  $this->index();
                   header('Location:index.php?c=qa&f=index');
        }
+
+       public function editar(){
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {// actualizar
+            // verificaciones
+                   //if(!isset($_POST['codigo'])){ header('');}
+                // leer parametros
+                  $id = htmlentities($_POST['id']);
+                  $nombre = htmlentities($_POST['nombre']);
+                  $apellido = htmlentities($_POST['apellido']);
+                  $categoria = htmlentities($_POST['cbxCategoria']);
+                  $tipoPreg =isset($_POST['tipoPregunta'])? htmlentities($_POST['tipoPregunta']):'';
+                  $pregunta = htmlentities($_POST['txaPregunta']);
+                  $respuesta = htmlentities($_POST['txaRespuesta']);
+      
+                  //llamar al modelo
+                  $exito = $this->model->actualizar($id, $nombre, $apellido, $categoria, $tipoPreg, $pregunta, $respuesta);
+                  $msj = 'Actualizado exitosamente';
+                  $color = 'primary';
+                  if (!$exito) {
+                      $msj = "No se pudo realizar la actualizacion";
+                      $color = "danger";
+                  }
+                  if(!isset($_SESSION)){ session_start();};
+                  $_SESSION['mensaje'] = $msj;
+                  $_SESSION['color'] = $color;
+                      header('Location:index.php?c=qa&f=index');
+                  
+              } else {
+      
+                  require_once 'model/dao/QADAO.php';
+                  $mod = new QADAO();
+                  $motivo = $mod->listar();
+      
+                  //leeer parametros
+                  $id= $_REQUEST['id'];
+                  
+                  //comunicando con el modelo
+                  $prod = $this->model->buscarxId($id);
+                  require_once 'visual/modulos/QAMatamoros/QA.editar.php';
+              }
+        }
+
+        public function buscar() {
+            // leer parametros
+            $busqueda = $_POST['busqueda'];
+            //comunica con el modelo
+            $resultados = $this->model->buscar($busqueda);
+            // comunicarnos a la vista
+            require_once 'visual/modulos/QAMatamoros/QA.list.php';
+        }
+
     }
