@@ -9,7 +9,7 @@
     <div class="formulario__grupo" id="grupo__nombre">
       <label for="nombre" class="formulario__label">NOMBRE *</label>
       <div class="formulario__grupo-input">
-        <input type="text" class="formulario__input" name="txtNombre" id="nombre" placeholder="Fernando" />
+        <input type="text" class="formulario__input" name="nombre" id="nombre" placeholder="Fernando" />
         <i class="formulario__validacion-estado fas fa-times-circle"></i>
       </div>
       <p class="formulario__input-error">Este campo y solo puede contener letras.</p>
@@ -19,7 +19,7 @@
     <div class="formulario__grupo" id="grupo__apellido">
       <label for="apellido" class="formulario__label">APELLIDO *</label>
       <div class="formulario__grupo-input">
-        <input type="text" class="formulario__input" name="txtApellido" id="apellido" placeholder="Matamoros" />
+        <input type="text" class="formulario__input" name="apellido" id="apellido" placeholder="Matamoros" />
         <i class="formulario__validacion-estado fas fa-times-circle"></i>
       </div>
       <p class="formulario__input-error">Este campo y solo puede contener letras.</p>
@@ -37,6 +37,7 @@
         </select>
         <i class="formulario__validacion-estado fas fa-times-circle"></i>
       </div>
+      <!--  -->
       <p class="formulario__input-error">Elija una categoria.</p>
     </div>
 
@@ -48,7 +49,7 @@
         <br>
         <i class="formulario__validacion-estado fas fa-times-circle"></i>
       </div>
-      <p class="formulario__input-error">Debe tener un máximo de 15 palabras.</p>
+            <!-- <p class="formulario__input-error">Debe tener un máximo de 15 palabras.</p> -->
     </div>
 
       <!-- Grupo: RESPUESTA -->
@@ -59,19 +60,19 @@
         <br>
         <i class="formulario__validacion-estado fas fa-times-circle"></i>
       </div>
-      <p class="formulario__input-error">Debe tener respuesta.</p>
+            <!-- <p class="formulario__input-error">Debe tener respuesta.</p> -->
     </div>
 
         <!-- Grupo: TIPO_PREGUNTA -->
         <div class="formulario__grupo" id="grupo__tipoPregunta">
       <label for="tipoPregunta" class="formulario__label">TIPO PREGUNTA *</label>
       <div class="formulario__grupo-input">
-        <input type="radio" class="formulario__input" name="radPreg" id="tipoPregunta" value="Espacio">Espacio<br/>
-        <input type="radio" class="formulario__input" name="radPreg" id="tipoPregunta" value="Precio">Precio<br/>
-        <input type="radio" class="formulario__input" name="radPreg" id="tipoPregunta" value="Otros">Otros<br/>
+        <input type="radio" class="formulario__input" name="tipoPregunta" id="tipoPregunta" value="Espacio">Espacio<br/>
+        <input type="radio" class="formulario__input" name="tipoPregunta" id="tipoPregunta" value="Precio">Precio<br/>
+        <input type="radio" class="formulario__input" name="tipoPregunta" id="tipoPregunta" value="Otros">Otros<br/>
         <i class="formulario__validacion-estado fas fa-times-circle"></i>
       </div>
-      <p class="formulario__input-error">Seleccione un tipo.</p>
+            <!-- <p class="formulario__input-error">Seleccione un tipo.</p> -->
     </div>
 
     <!-- Grupo: Terminos y Condiciones -->
