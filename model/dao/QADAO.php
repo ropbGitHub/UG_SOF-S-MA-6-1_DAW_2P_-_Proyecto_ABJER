@@ -42,11 +42,13 @@ class QADAO {
 
     public function actualizar($id, $nombre, $apellido, $categoria, $tipoPreg, $pregunta, $respuesta){
 
-        $sql = "update formulario set nombre=:nom, apellidos=:ape, categoria=:cat, tipoPregunta=:tipoP,
-        pregunta=:pre, respuesta=:res"." where id =:id";
+        $sql = "update formulario 
+                set nombre=:nom, apellidos=:ape, categoria=:cat, tipoPregunta=:tipoP, pregunta=:pre, respuesta=:res 
+                where id =:id";
 
         $sentencia = $this->con->prepare($sql);
         $data = [
+            'id' => $id,
             'nom'=>$nombre,
             'ape' =>$apellido,
             'cat' => $categoria,

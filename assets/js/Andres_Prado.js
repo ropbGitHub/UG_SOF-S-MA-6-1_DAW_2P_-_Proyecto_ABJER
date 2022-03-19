@@ -2,14 +2,16 @@ var form = document.querySelector("#formulario_cotizacion");
 form.addEventListener('submit', validarDatos);
 
 function validarDatos(event) {
+    //event.preventDefault();
+
     var resultado = true;
     var txtNombre = document.getElementById("idNombre");
     var txtApellido = document.getElementById("idApellido");
     var txtemail = document.getElementById("idEmail");
     var txtNumero = document.getElementById("idCantidadPer");
     var txtFecha = document.getElementById("idFecha");
-    var btnRadios = document.getElementsByName("salon");
-    var btnCheks = document.getElementsByName("servicio");
+    var btnRadios = document.getElementsByName("radSalon");
+    var btnCheks = document.getElementsByName("tipoSer[]");
     var letra = /^[a-z ,.'-]+$/i;// letrasyespacio   ///^[A-Z]+$/i;// solo letras
     var correo = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
 
@@ -80,6 +82,7 @@ function validarDatos(event) {
         resultado = false;
         mensaje("Debe seleccionar un salón", btnRadios[0]);
     }
+
     //VALIDAR CHEKS
     for (let i = 0; i < btnCheks.length; i++) {
         if (btnCheks[i].checked) {
@@ -91,7 +94,6 @@ function validarDatos(event) {
         resultado = false;
         mensaje("Debe seleccionar al menos un servicio", btnCheks[0]);
     }
-
     //SI ES TRUE-> NORMAL; SI ES FALSE ->DETIENE EVENTO (evento de envio submit)
     if (!resultado) {
         event.preventDefault();
@@ -107,7 +109,6 @@ function mensaje(cadenaMensaje, elemento) {
     nodoMensaje.textContent = cadenaMensaje;
     nodoMensaje.setAttribute("class", "mensajeError");
     nodoPadre.appendChild(nodoMensaje);
-
 }
 
 function limpiarMensajes() {

@@ -87,19 +87,19 @@ class ContactoDAO {
     public function actualizar($id, $ced, $nom, $fecha, $id_motivo, $correo, $telefono) {
         //prepare
         $sql = "UPDATE contacto 
-                SET cedula = :ced, nombre = :nom, correo = :cor, telefono = :tel, fechaDisponible = :fecha, ID_MOTIVO = :id_mo
-                WHERE contacto.ID_CONTACTO =:idc";
+                SET cedula = :ced, nombre = :nom, correo = :cor, telefono = :tel, fechaDisponible = :fec, ID_MOTIVO = :id_mo 
+                WHERE ID_CONTACTO =:id";
         //now());
         //bind parameters
         $sentencia = $this->con->prepare($sql);
         $data = [
+            'id' => $id,
             'ced' => $ced,
             'nom' => $nom,
             'fec' => $fecha,
             'id_mo' => $id_motivo,
             'cor' => $correo,
-            'tel' => $telefono,
-            'idc' => $id
+            'tel' => $telefono
         ];
         //execute
         $sentencia->execute($data);

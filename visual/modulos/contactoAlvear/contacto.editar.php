@@ -3,7 +3,7 @@
 <main class="main_form">
   <p class="par_formulario">Contáctese con Nosotros</p>
   <br />
-  <form action="index.php?c=contacto&f=editar" method="POST" class="formulario" id="formulario">
+  <form action="index.php?c=contacto&f=editar" method="POST" class="formulario" id="formularioed">
     
     <!--ID_OCULTO-->
         <input type="hidden" class="formulario__input" name="id" id="id" value="<?php echo $prod['ID_CONTACTO']; ?>"/>

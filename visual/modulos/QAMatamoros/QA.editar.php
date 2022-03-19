@@ -3,7 +3,7 @@
 <main class="main_form">
   <p class="par_formulario">AGREGAR PREGUNTA</p>
   <br />
-  <form action="index.php?c=qa&f=editar" method="POST" class="formulario" id="formulario">
+  <form action="index.php?c=qa&f=editar" method="POST" class="formulario" id="formulariof">
     
     <!--ID_OCULTO-->
         <input type="hidden" class="formulario__input" name="id" id="id" value="<?php echo $prod['id']; ?>"/>
