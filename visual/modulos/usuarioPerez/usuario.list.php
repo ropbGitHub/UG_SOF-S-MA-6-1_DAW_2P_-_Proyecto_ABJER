@@ -3,15 +3,17 @@
 <!-- main-->
 <main class="container pb-5">
 
-  <div class="cabecera">
-    <h2>Registro de Usuario</h2>
-  </div>
+  <a href="index.php?c=usuario&f=nuevo"><strong class="peso">Agregar de Usuario</strong></a>
 
+  <div class="cabecera">
+    <h2>Lista de Usuarios</h2>
+  </div>
+  <!--
   <form>
     <input type="text">
     <button class="btn btn-primary btn-lg" id="button_search" type="summit">Buscar</button>
   </form>
-
+-->
   <table>
     <thead>
       <tr>
@@ -25,7 +27,6 @@
     </thead>
     <tbody>
       <?php
-      $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
       foreach ($rows as $row) {
       ?>
       <tr>
@@ -37,8 +38,12 @@
         <td><?php echo $row['password'] ?></td>
         <td>
           <!-- Passing "id" with value of id_user -->
+          <!-- update -->
           <a href="../Registrarse_RPB/sign_in-update.php?id=<?php echo $row['id_user'] ?>">Actualizar</a>
-          <a href="../Registrarse_RPB/sign_in-delete.php?id=<?php echo $row['id_user'] ?>">Eliminar</a>
+          <!-- delete -->
+          <a onclick="if(!confirm('Esta seguro de eliminar el contacto?'))return false;"
+            href="index.php?c=usuario&f=eliminar&id=<?php echo $fila['id_user']; ?>"><i
+              class="material-icons">Eliminar</i></a>
         </td>
       </tr>
       <?php } ?>

@@ -9,6 +9,16 @@ class UsuarioDAO {
     }
 
     public function listar() {
+        // SQL sentence
+        $sql = "SELECT * FROM users";
+        // Bind parameters
+        $stmt = $this->con->prepare($sql);
+        // Execute SQL sentence
+        $stmt->execute();
+        // Capture results
+        $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        // Return results to controller
+        return $rows;
     }
 
     public function insertar($username, $email, $birthday, $nationality, $password) {

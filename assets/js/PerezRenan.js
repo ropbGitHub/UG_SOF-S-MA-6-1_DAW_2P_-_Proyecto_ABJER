@@ -79,7 +79,6 @@ function dataValidation(event) {
   if (!output) {
     event.preventDefault(); //stop submit
   }
-
 }
 
 function messageWarning(elemento, cadenaMensaje) {
