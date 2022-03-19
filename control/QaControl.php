@@ -1,5 +1,6 @@
 <?php
     require_once 'model/dao/QADAO.php';
+    require_once 'model/dto/QA.php';
     
     class QaControl {
         private $model;

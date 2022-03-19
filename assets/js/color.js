@@ -1,5 +1,7 @@
 const formulario = document.getElementById('formulario');
 const inputs = document.querySelectorAll('#formulario input');
+const formulariof = document.getElementById('formulariof');
+const inputsed = document.querySelectorAll('#formularioed input');
 
 const expresiones = {
     nombre: /^[a-zA-ZÀ-ÿ\s]{1,40}$/,
@@ -54,6 +56,10 @@ inputs.forEach((input) => {
     input.addEventListener('keyup', validarFormulario);
     input.addEventListener('blur', validarFormulario);
 });
+inputsed.forEach((input) => {
+    input.addEventListener('keyup', validarFormulario);
+    input.addEventListener('blur', validarFormulario);
+});
 
 formulario.addEventListener('submit', (e) => {
     e.preventDefault();
@@ -74,6 +80,38 @@ formulario.addEventListener('submit', (e) => {
         var request = (window.XMLHttpRequest) ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
 
         var ajaxUrl = "index.php?c=qa&f=nuevo";
+        var formElement = document.querySelector("#formulario");
+        var formDatos = new FormData(formElement);
+        request.open("POST", ajaxUrl, true);
+        request.send(formDatos);
+
+        formulario.reset();
+        window.location.replace("index.php?c=qa&f=index");
+
+    } else {
+        document.getElementById('formulario__mensaje').classList.add('formulario__mensaje-activo');
+    }
+});
+
+formulariof.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    const terminos = document.getElementById('terminos');
+    if (campos.cedula && campos.nombre && campos.correo && campos.telefono && terminos.checked) {
+
+        document.getElementById('formulario__mensaje-exito').classList.add('formulario__mensaje-exito-activo');
+        setTimeout(() => {
+            document.getElementById('formulario__mensaje-exito').classList.remove('formulario__mensaje-exito-activo');
+        }, 5000);
+
+        document.querySelectorAll('.formulario__grupo-correcto').forEach((icono) => {
+            icono.classList.remove('formulario__grupo-correcto');
+        });
+
+
+        var request = (window.XMLHttpRequest) ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
+
+        var ajaxUrl = "index.php?c=qa&f=editar";
         var formElement = document.querySelector("#formulario");
         var formDatos = new FormData(formElement);
         request.open("POST", ajaxUrl, true);
