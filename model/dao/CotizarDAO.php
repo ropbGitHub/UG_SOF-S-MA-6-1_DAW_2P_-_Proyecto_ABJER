@@ -10,8 +10,6 @@ class CotizarDAO {
 
     public function listar(){
         // sql de la sentencia
-        // $sql = "SELECT s.ID_COTIZACION,s.nombre, s.apellido,s.correo, s.cantidadPersona,s.fechaEvento,s.tipoSalonEvento,s.tipoServicioEvento
-        // FROM serviciocoti s";
         $sql = "SELECT * FROM serviciocoti";
         //preparacion de la sentencia
         $stmt = $this->con->prepare($sql);
@@ -24,7 +22,30 @@ class CotizarDAO {
 
     }
 
-    public function insertar(){}
+    public function insertar($nombre, $apellido, $correo, $cantPer, $fecha, $tipoSalon,$chktServ){
+        $sql = "insert into serviciocoti(nombre, apellido, email, cantidadPersona, fecha, salon, servicio) 
+        values(:nom,:apell,:corr,:cantiPer,:fech,:tipoSa, :tipoServ)";
+
+        //bind parameters
+        $sentencia = $this->con->prepare($sql);
+        $data = [
+            'nom' => $nombre,
+            'apell'=>$apellido,
+            'corr' => $correo,
+            'cantiPer' => $cantPer,
+            'fech' => $fecha,
+            'tipoSa' => $tipoSalon,
+            'tipoServ' => $chktServ
+        ];
+        //execute
+        $sentencia->execute($data);
+        //retornar resultados, 
+        if ($sentencia->rowCount() <= 0) {// verificar si se inserto 
+            //rowCount permite obtner el numero de filas afectadas
+            return false;
+        }
+        return true;
+    }
 
     public function actualizar(){}
 
