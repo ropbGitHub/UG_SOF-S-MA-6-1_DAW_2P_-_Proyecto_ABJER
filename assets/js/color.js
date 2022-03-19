@@ -4,15 +4,15 @@ const inputs = document.querySelectorAll('#formulario input');
 const expresiones = {
     nombre: /^[a-zA-ZÀ-ÿ\s]{1,40}$/,
     apellido: /^[a-zA-ZÀ-ÿ\s]{1,40}$/,
-    pregunta: /^[a-zA-ZÀ-ÿ\s]{1,40}$/,
-    respuesta: /^[a-zA-ZÀ-ÿ\s]{1,40}$/,
+    //pregunta: /^[a-zA-ZÀ-ÿ\s]{1,40}$/,
+    //respuesta: /^[a-zA-ZÀ-ÿ\s]{1,40}$/,
 }
 
 const campos = {
     nombre: false,
     apellido: false,
-    pregunta: false,
-    respuesta: false
+    //pregunta: false,
+    //respuesta: false
 }
 
 const validarFormulario = (e) => {
@@ -23,12 +23,12 @@ const validarFormulario = (e) => {
         case "apellido":
             validarCampo(expresiones.apellido, e.target, 'apellido');
             break;
-        case "pregunta":
-            validarCampo(expresiones.pregunta, e.target, 'pregunta');
-            break;
-        case "respuesta":
-            validarCampo(expresiones.respuesta, e.target, 'respuesta');
-            break;
+        /* case "pregunta":
+             validarCampo(expresiones.pregunta, e.target, 'pregunta');
+             break;
+         case "respuesta":
+             validarCampo(expresiones.respuesta, e.target, 'respuesta');
+             break;*/
     }
 }
 
@@ -59,7 +59,7 @@ formulario.addEventListener('submit', (e) => {
     e.preventDefault();
 
     const terminos = document.getElementById('terminos');
-    if (campos.nombre && campos.apellido && campos.pregunta && campos.respuesta) {
+    if (campos.nombre && campos.apellido /*&& terminos.checked && campos.pregunta && campos.respuesta*/) {
 
         document.getElementById('formulario__mensaje-exito').classList.add('formulario__mensaje-exito-activo');
         setTimeout(() => {
@@ -86,10 +86,3 @@ formulario.addEventListener('submit', (e) => {
         document.getElementById('formulario__mensaje').classList.add('formulario__mensaje-activo');
     }
 });
-
-function limpiarMensajes() {
-    var mensajes = document.querySelectorAll(".mensajeError");
-    for (let i = 0; i < mensajes.length; i++) {
-        mensajes[i].remove();// remueve o elimina un elemento de mi doc html
-    }
-}

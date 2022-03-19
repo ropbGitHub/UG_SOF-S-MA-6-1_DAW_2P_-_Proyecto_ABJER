@@ -40,7 +40,29 @@ class QADAO {
         return true;
     }
 
-    public function actualizar(){}
+    public function actualizar($id, $nom, $ape, $cat, $tipoP, $pre, $res){
+
+        $sql = "update formulario set nombre=:nom, apellidos=:ape, categoria=:cat, tipoPregunta=:tipoP,
+        pregunta=:pre, respuesta=:res"." where id =:id";
+
+        $sentencia = $this->con->prepare($sql);
+        $data = [
+            'nom'=>$nom,
+            'ape' =>$ape,
+            'cat' => $cat,
+            'tipoP' =>$tipoP,
+            'pre' =>$pre,
+            'res' =>$res
+        ];
+        //execute
+        $sentencia->execute($data);
+        //retornar resultados, 
+        if ($sentencia->rowCount() <= 0) {// verificar si se inserto 
+            //rowCount permite obtner el numero de filas afectadas
+            return false;
+        }
+        return true;
+    }
 
     public function eliminar($id){
         //prepare
