@@ -32,16 +32,14 @@ class CotizarDAO {
 
     public function buscar($parametro) {
         // sql de la sentencia
-        $sql = "SELECT c.ID_CONTACTO,c.cedula,c.nombre,c.correo,c.telefono,c.fechaDisponible,m.descripcion 
-                FROM contacto c
-                INNER JOIN motivo m ON c.ID_MOTIVO = m.ID_MOTIVO
-                WHERE (c.nombre LIKE :b1 OR m.descripcion LIKE :b2)";
+        $sql = "SELECT * FROM serviciocoti WHERE (nombre LIKE :b1 OR apellido LIKE :b2 OR salon LIKE :b3 )";
         $stmt = $this->con->prepare($sql);
         // preparar la sentencia
         $conlike = '%' . $parametro . '%';
         $data = [
             'b1' => $conlike, 
-            'b2' => $conlike
+            'b2' => $conlike,
+            'b3' => $conlike
         ];
         // ejecutar la sentencia
         $stmt->execute($data);
