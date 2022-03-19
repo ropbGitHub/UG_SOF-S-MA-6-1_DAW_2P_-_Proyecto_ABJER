@@ -47,9 +47,63 @@ class CotizarDAO {
         return true;
     }
 
-    public function actualizar(){}
+    public function actualizar($id,$nombre, $apellido, $correo, $cantPer, $fecha, $tipoSalon,$chktServ){
+        $sql = "update serviciocoti set nombre=:nom, apellido=:apell, email=:corr, cantidadPersona=:cantiPer, fecha=:fech, 
+        salon=:tipoSa, servicio=:tipoServ" . " where ID_COTIZACION =:id";
 
-    public function eliminar(){}
+        $sentencia = $this->con->prepare($sql);
+        $data = [
+            'id' => htmlentities($_POST['id1']),
+            'nom' => htmlentities($_POST['nombre']),
+            'apell' => htmlentities($_POST['apellido']),
+            'corr' => htmlentities($_POST['email']),
+            'cantiPer' => htmlentities($_POST['cantidad_per']),
+            'fech' => htmlentities($_POST['fecha']),
+            'tipoSa' => htmlentities($_POST['radSalon']),
+            'tipoServ' => implode(",", $_POST['tipoSer'])
+        ];
+        //execute
+        $sentencia->execute($data);
+        //retornar resultados, 
+        if ($sentencia->rowCount() <= 0) {// verificar si se inserto 
+            //rowCount permite obtner el numero de filas afectadas
+            return false;
+        }
+        return true;
+    }
+
+    public function buscarxId($id) { // buscar un producto por su id
+        $sql = "select * from serviciocoti 
+        where ID_COTIZACION = :id1";
+        // preparar la sentencia
+        $stmt = $this->con->prepare($sql);
+        $data = ['id1' => $id];
+        // ejecutar la sentencia
+        $stmt->execute($data);
+        // recuperar los datos (en caso de select)
+        $formulario = $stmt->fetch(PDO::FETCH_ASSOC);// fetch retorna el primer registro
+        // retornar resultados
+        return $formulario;
+    }
+
+    public function eliminar($id){
+
+        //prepare
+        $sql = "delete FROM serviciocoti
+        WHERE ID_COTIZACION = :id";
+        //now());
+        //bind parameters
+        $sentencia = $this->con->prepare($sql);
+        $data = ['id' => $id];
+        //execute
+        $sentencia->execute($data);
+        //retornar resultados, 
+        if ($sentencia->rowCount() <= 0) {// verificar si se inserto 
+        //rowCount permite obtner el numero de filas afectadas
+        return false;
+        }
+        return true;
+    }
 
     public function buscar($parametro) {
         // sql de la sentencia

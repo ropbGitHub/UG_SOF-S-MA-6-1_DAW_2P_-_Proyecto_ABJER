@@ -44,11 +44,6 @@
             <input class="form_salon" type="radio" name="radSalon" value="Vista">Vista<br />
             <input class="form_salon" type="radio" name="radSalon" value="Picaddily">Picaddily<br />
             <input class="form_salon" type="radio" name="radSalon" value="Bristol">Bristol<br />
-
-            <!-- <input class="form_salon" id="idSalon1" type="radio" name="salon" value="Vic" />Victoria<br />
-            <input class="form_salon" id="idSalon2" type="radio" name="salon" value="Vis" />Vista<br />
-            <input class="form_salon" id="idSalon3" type="radio" name="salon" value="Pic" />Picaddily<br />
-            <input class="form_salon" id="idSalon4" type="radio" name="salon" value="Bris" />Bristol<br /> -->
           </div>
           <!-- servicios del evento -->
           <div class="row">
@@ -58,14 +53,6 @@
               <input type="checkbox" name="tipoSer[]" value="Buffet">Buffet<br />
               <input type="checkbox" name="tipoSer[]" value="Iluminación">Iluminación<br />
               <input type="checkbox" name="tipoSer[]" value="Audio y Video">Audio y Video<br />
-              <!-- Decoración
-              <input type="checkbox" name="servicio" value="1" id="idServicio1" class="formItem ser" /><br />
-              Buffet
-              <input type="checkbox" name="servicio" value="2" id="idServicio2" class="formItem ser" /><br />
-              Iluminación
-              <input type="checkbox" name="servicio" value="3" id="idServicio3" class="formItem ser" /><br />
-              Audio y Video
-              <input type="checkbox" name="servicio" value="4" id="idServicio4" class="formItem ser" /><br /> -->
             </div>
           </div>
           <!-- Boton enviar -->
