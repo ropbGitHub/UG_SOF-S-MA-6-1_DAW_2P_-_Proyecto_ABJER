@@ -1,71 +1,71 @@
 <?php require_once 'visual/templates/templatesPerez/Header.php'; ?>
 
 <!-- main-->
-<main>
-  <div class="container mt-5">
-    <div class="cabecera">
-      <h2>Registro de Usuario</h2>
+<main class="container pb-5">
+
+  <div class="cabecera">
+    <h2>Registro de Usuario</h2>
+  </div>
+
+  <form class="row align-items-center" id="form_user" method="POST" action="index.php?c=usuario&f=nuevo">
+
+    <div class="row justify-content-center pb-5">
+      <!-- username -->
+      <div class="col-md-4">
+        <label class="form-label" for="username">Nombre de usuario</label>
+        <input class="form-control" id="username" name="username" type="text" />
+      </div>
+      <!-- email -->
+      <div class="col-md-4">
+        <label class="form-label" for="email">Correo electrónico</label>
+        <input class="form-control" id="email" name="email" type="email" />
+      </div>
     </div>
 
-    <form class="row g-3" id="formulario">
-      <!-- Nombre de usuario -->
-      <div class="form-control col-md-6">
-        <label for="usuario">Nombre de usuario</label>
-        <input id="usuario" type="text" />
-        <p></p>
+    <div class="row justify-content-center pb-5">
+      <!-- birthday -->
+      <div class="col-md-4">
+        <label class="form-label" for="birthday">Fecha de nacimiento</label>
+        <input class="form-control" id="birthday" name="birthday" type="date" />
       </div>
-
-      <!-- E-mail -->
-      <div class="form-control">
-        <label for="email">E-mail</label>
-        <input id="email" type="email" />
-        <p></p>
-      </div>
-
-      <!-- Fecha Nacimiento -->
-      <div class="form-control">
-        <label for="date">Fecha de nacimiento</label>
-        <input id="date" type="date" />
-        <p></p>
-      </div>
-
-      <!-- Nacionalidad -->
-      <div class="form-control">
-        <label for="country">Nacionalidad (opcional)</label>
+      <!-- nationality -->
+      <div class="col-md-4">
+        <label class="form-label" for="nationality">Nacionalidad (opcional)</label>
         <!-- <input id="date" type="date" /> -->
-        <select name="country" id="country">
+        <select class="form-select" id="nationality" name="nationality">
           <option value="0">N/A</option>
           <option value="1">Ecuador</option>
           <option value="2">Perú</option>
           <option value="3">Venezuela</option>
           <option value="4">Chile</option>
         </select>
-        <p></p>
+      </div>
+    </div>
+
+    <div class="row justify-content-center pb-5">
+      <!-- password1 -->
+      <div class="col-md-4">
+        <label class="form-label" for="password1">Contraseña: </label>
+        <input class="form-control" id="password1" name="password1" type="password" placeholder="password1" />
       </div>
 
-      <!-- Password -->
-      <div class="form-control">
-        <label for="pass">Password</label>
-        <input id="pass" type="password" />
-        <p></p>
+      <!-- password2 -->
+      <div class="col-md-4">
+        <label class="form-label" for="password2">Confirmar contraseña: </label>
+        <input class="form-control" id="password2" name="password2" type="password" />
       </div>
+    </div>
 
-      <!-- Confirmar Password -->
-      <div class="form-control">
-        <label for="passConfirma">Confirmar Password</label>
-        <input id="passConfirma" type="password" />
-        <p></p>
+    <div class="row justify-content-center pt-3">
+      <div class="d-grid gap-2 col-4 mx-auto">
+        <!-- send -->
+        <button class="btn btn-outline-primary btn-lg" id="button_send" type="submit" value="save">Enviar</button>
+        <!-- cancel -->
+        <button class="btn btn-outline-primary btn-lg" id="button_cancel">Canceler</button>
       </div>
+    </div>
 
-      <div class="btn">
-        <button class="btn-form">Enviar</button>
-      </div>
-    </form>
-
-    <form action="./index.html">
-      <button id="btn-form">Canceler/Regresar</button>
-    </form>
-  </div>
+  </form>
 </main>
 
 <?php require_once 'visual/templates/footer.php'; ?>
