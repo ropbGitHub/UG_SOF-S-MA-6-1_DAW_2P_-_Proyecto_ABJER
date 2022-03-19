@@ -62,7 +62,6 @@
             </div>
           </div>
         </form>
-        <!-- <form id="formulario_cotizacion" class="bloque_formulario_prado"></form> -->
       </section>
     </div>
   </div>
