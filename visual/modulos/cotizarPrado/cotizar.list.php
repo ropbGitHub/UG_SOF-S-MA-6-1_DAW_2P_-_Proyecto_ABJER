@@ -26,6 +26,7 @@
             <tr>
                 <th>ID </th>
                 <th>Nombre </th>
+                <th>Apellido </th>
                 <th>correo </th>
                 <th>cantidad de persona(s) </th>
                 <th>fechaEvento </th>
@@ -41,11 +42,12 @@
             <tr>
                 <td><?php echo $fila['ID_COTIZACION'];?></td>
                 <td><?php echo $fila['nombre'];?></td>
-                <td><?php echo $fila['correo'];?></td>
+                <td><?php echo $fila['apellido'];?></td>
+                <td><?php echo $fila['email'];?></td>
                 <td><?php echo $fila['cantidadPersona'];?></td>
-                <td><?php echo $fila['fechaEvento'];?></td>
-                <td><?php echo $fila['tipoSalonEvento'];?></td>
-                <td><?php echo $fila['tipoServicioEvento'];?></td>
+                <td><?php echo $fila['fecha'];?></td>
+                <td><?php echo $fila['salon'];?></td>
+                <td><?php echo $fila['servicio'];?></td>
                 <td>
                     <a href="index.php?c=cotizar&f=editar&id=<?php echo  $fila['ID_COTIZACION']; ?>"><i class="material-icons">edit</i></a>
                     <a onclick="if(!confirm('Esta seguro de eliminar esta cotización?'))return false;"  href="index.php?c=cotizar&f=eliminar&id=<?php echo  $fila['ID_COTIZACION']; ?>"><i class="material-icons">delete</i></a>

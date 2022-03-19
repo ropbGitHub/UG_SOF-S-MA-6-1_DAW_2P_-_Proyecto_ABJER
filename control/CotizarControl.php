@@ -1,6 +1,6 @@
 <?php
     require_once 'model/dao/CotizarDAO.php';
-    require_once 'model/dto/Cotizacion.php';
+    require_once 'model/dto/Cotizar.php';
 
     class CotizarControl {
         private $model;
@@ -17,6 +17,15 @@
             //llamar a la vista
             require_once 'visual/modulos/cotizarPrado/cotizar.list.php'; //tiene que cambiar "nuevo"por "listar"
         }
+        //Funcion buscar
+        public function buscar() {
+            // leer parametros
+            $busqueda = $_POST['busqueda'];
+            //comunica con el modelo
+            $resultados = $this->model->buscar($busqueda);
+            // comunicarnos a la vista
+            require_once 'visual/modulos/CotizarPrado/Cotizar.list.php';
+        }
 
         //Funcion Nuevo
         public function nuevo() {
@@ -24,17 +33,18 @@
             // verificaciones
                    //if(!isset($_POST['codigo'])){ header('');}
                 // leer parametros
-                $nombre = htmlentities($_POST['txtNombre']);
-                $correo = htmlentities($_POST['txtCorreo']);
-                $cantPer = htmlentities($_POST['txtCantPer']);
-                $fecha = htmlentities($_POST['txtFecha']);
-                $tipoSalon = isset($_POST['radSalon']) ? htmlentities($_POST['radSalon']) : '';
-                $tipoServicio = $_POST['tipoSer'];
+                $nombre = htmlentities($_POST['nombre']);
+                $apellido = htmlentities($_POST['apellido']);
+                $correo = htmlentities($_POST['email']);
+                $cantPer = htmlentities($_POST['cantidad_per']);
+                $fecha = htmlentities($_POST['fecha']);
+                $tipoSalon = isset($_POST['salon']) ? htmlentities($_POST['salon']) : '';
+                $tipoServicio = $_POST['servicio'];
                 $chktServ = implode(",", $tipoServicio);
                
                 //echo "<script>alert('msjBilly');</script>";
                 //llamar al modelo
-                $exito = $this->model->insertar($nombre, $correo, $cantPer, $tipoSalon, $tipoServicio, $chktServ);
+                $exito = $this->model->insertar($nombre, $apellido,$correo, $cantPer, $tipoSalon, $tipoServicio, $chktServ);
                 $msj = 'Cotizacion guardado exitosamente';
                 $color = 'primary';
                 if (!$exito) {
@@ -46,7 +56,7 @@
                 $_SESSION['color'] = $color;
                     //llamar a la vista
                   //  $this->index();
-                header('Location:index.php?c=contacto&f=index');
+                header('Location:index.php?c=cotizar&f=index');
                
             } else {
                 // mostrar el formulario de nuevo producto

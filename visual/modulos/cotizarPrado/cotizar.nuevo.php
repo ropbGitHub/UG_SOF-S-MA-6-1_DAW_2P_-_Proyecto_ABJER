@@ -6,7 +6,7 @@
       <!-- section-->
       <section class="section">
         <h2 class="h2prado">Formulario de Cotizacion</h2>
-        <form id="formulario_cotizacion" class="bloque_formulario_prado">
+        <form action="index.php?c=cotizacion&f=nuevo" method="post" class="bloque_formulario_prado" id="formulario_cotizacion">
           <!-- Nombre -->
           <div class="row">
             <label> Ingrese su nombre:</label><br />
@@ -66,6 +66,7 @@
             </div>
           </div>
         </form>
+        <!-- <form id="formulario_cotizacion" class="bloque_formulario_prado"></form> -->
       </section>
     </div>
   </div>
@@ -76,7 +77,7 @@
 <?php require_once 'visual/templates/footer.php'; ?>
 
 <!-- Enlance externo al JavaScript de Prado -->
-<script src="assets/js/Andres_Prado.js"></script>
+<!-- <script src="assets/js/Andres_Prado.js"></script> -->
 </body>
 
 </html>

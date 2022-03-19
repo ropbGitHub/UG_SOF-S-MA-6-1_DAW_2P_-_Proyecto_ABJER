@@ -98,6 +98,18 @@ function validarDatos(event) {
     } else {
         alert("Gracias por llenar el formulario :D");
     }
+
+
+    var request = (window.XMLHttpRequest) ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
+
+    var ajaxUrl = "index.php?c=cotizar&f=nuevo";
+    var formElement = document.querySelector("#formulario");
+    var formDatos = new FormData(formElement);
+    request.open("POST", ajaxUrl, true);
+    request.send(formDatos);
+
+    formulario.reset();
+    window.location.replace("index.php?c=cotizar&f=index");
 }
 
 function mensaje(cadenaMensaje, elemento) {
