@@ -15,11 +15,29 @@ class UsuarioDAO {
         $stmt = $this->con->prepare($sql);
         // Execute SQL sentence
         $stmt->execute();
-        // Capture results
-        $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
-        // Return results to controller
-        return $results;
+        // Capture data
+        $outputData = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        // Return data results to controller
+        return $outputData;
     }
+
+    public function searchId($id) { // Search user data by ID
+        // Assign values
+        $data = [
+            'data_Id' => $id
+        ];
+        // SQL sentence
+        $sql = "SELECT * FROM users WHERE id_user = :data_Id";
+        // Bind parameters
+        $stmt = $this->con->prepare($sql);
+        // Execute SQL sentence 
+        $stmt->execute($data);
+        // recuperar los datos (en caso de select)
+        $outputData = $stmt->fetch(PDO::FETCH_ASSOC); // fetch data 1st register
+        // Return result
+        return $outputData;
+    }
+
 
     public function insertar($username, $email, $birthday, $nationality, $password) {
         // Assign values
@@ -42,6 +60,8 @@ class UsuarioDAO {
         }
         return true;
     }
+
+
 
     public function buscar($parameter) {
     }

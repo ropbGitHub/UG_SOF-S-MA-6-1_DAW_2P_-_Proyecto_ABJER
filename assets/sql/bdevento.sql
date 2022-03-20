@@ -2,10 +2,10 @@
 -- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
--- Servidor: 127.0.0.1
--- Tiempo de generación: 17-03-2022 a las 17:25:41
--- Versión del servidor: 10.4.22-MariaDB
--- Versión de PHP: 8.1.2
+-- Host: 127.0.0.1
+-- Generation Time: Mar 20, 2022 at 02:46 AM
+-- Server version: 10.4.22-MariaDB
+-- PHP Version: 8.1.2
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,13 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de datos: `bdevento`
+-- Database: `bdevento`
 --
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `contacto`
+-- Table structure for table `contacto`
 --
 
 CREATE TABLE `contacto` (
@@ -38,19 +38,20 @@ CREATE TABLE `contacto` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Volcado de datos para la tabla `contacto`
+-- Dumping data for table `contacto`
 --
 
 INSERT INTO `contacto` (`ID_CONTACTO`, `cedula`, `nombre`, `correo`, `telefono`, `fechaDisponible`, `ID_MOTIVO`) VALUES
 (1, '0941214082', 'Billy', 'alvearbilly@gmail.com', '0994115076', '2022-03-25', 1),
 (2, '0912345678', 'Andres', 'andres@gmail.com', '0991234567', '2022-03-20', 2),
 (3, '0912345677', 'Renan', 'renan@gmail.com', '0991234566', '2022-04-21', 3),
-(4, '0991235698', 'Fernando', 'fer@gmail.com', '0991243658', '2022-03-26', 4);
+(4, '0991235698', 'Fernando', 'fer@gmail.com', '0991243658', '2022-03-26', 4),
+(9, '', '', '', '', '0000-00-00', 0);
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `formulario`
+-- Table structure for table `formulario`
 --
 
 CREATE TABLE `formulario` (
@@ -64,7 +65,7 @@ CREATE TABLE `formulario` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Volcado de datos para la tabla `formulario`
+-- Dumping data for table `formulario`
 --
 
 INSERT INTO `formulario` (`nombre`, `apellidos`, `categoria`, `tipoPregunta`, `pregunta`, `respuesta`, `id`) VALUES
@@ -75,7 +76,7 @@ INSERT INTO `formulario` (`nombre`, `apellidos`, `categoria`, `tipoPregunta`, `p
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `motivo`
+-- Table structure for table `motivo`
 --
 
 CREATE TABLE `motivo` (
@@ -84,7 +85,7 @@ CREATE TABLE `motivo` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Volcado de datos para la tabla `motivo`
+-- Dumping data for table `motivo`
 --
 
 INSERT INTO `motivo` (`ID_MOTIVO`, `descripcion`) VALUES
@@ -96,7 +97,7 @@ INSERT INTO `motivo` (`ID_MOTIVO`, `descripcion`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `serviciocot`
+-- Table structure for table `serviciocot`
 --
 
 CREATE TABLE `serviciocot` (
@@ -110,7 +111,7 @@ CREATE TABLE `serviciocot` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Volcado de datos para la tabla `serviciocot`
+-- Dumping data for table `serviciocot`
 --
 
 INSERT INTO `serviciocot` (`ID_COTIZACION`, `nombre`, `correo`, `cantidadPersona`, `fechaEvento`, `tipoSalonEvento`, `tipoServicioEvento`) VALUES
@@ -122,90 +123,90 @@ INSERT INTO `serviciocot` (`ID_COTIZACION`, `nombre`, `correo`, `cantidadPersona
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `users`
+-- Table structure for table `users`
 --
 
 CREATE TABLE `users` (
   `id_user` int(11) NOT NULL,
   `username` varchar(20) NOT NULL,
   `email` varchar(50) NOT NULL,
-  `birthdate` date NOT NULL,
+  `birthday` date NOT NULL,
   `nationality` varchar(50) NOT NULL,
   `password` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Volcado de datos para la tabla `users`
+-- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id_user`, `username`, `email`, `birthdate`, `nationality`, `password`) VALUES
+INSERT INTO `users` (`id_user`, `username`, `email`, `birthday`, `nationality`, `password`) VALUES
 (5, 'qwer', 'sdfg@sdfg.sdfg', '2022-02-03', 'Colombiano', 'sdfg'),
 (6, 'ALGUIEN', 'ALGUIEN@ALGUIEN.ALGUIEN', '2022-02-11', 'Ecuatoriano', 'ALGUIEN'),
 (7, 'ESO', 'ESO@ESO.ESO', '2022-02-03', 'Ecuatoriano', 'ESO'),
-(9, 'aaaa', 'aaa@aaa', '2022-02-02', 'Ecuatoriano', 'holi');
+(22, 'asdfasdfad', 'asdf@asdf.asdfa', '2022-03-03', 'Per&uacute;', '1234qwQW');
 
 --
--- Índices para tablas volcadas
+-- Indexes for dumped tables
 --
 
 --
--- Indices de la tabla `contacto`
+-- Indexes for table `contacto`
 --
 ALTER TABLE `contacto`
   ADD PRIMARY KEY (`ID_CONTACTO`),
   ADD KEY `ID_MOTIVO` (`ID_MOTIVO`) USING BTREE;
 
 --
--- Indices de la tabla `formulario`
+-- Indexes for table `formulario`
 --
 ALTER TABLE `formulario`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indices de la tabla `motivo`
+-- Indexes for table `motivo`
 --
 ALTER TABLE `motivo`
   ADD PRIMARY KEY (`ID_MOTIVO`);
 
 --
--- Indices de la tabla `serviciocot`
+-- Indexes for table `serviciocot`
 --
 ALTER TABLE `serviciocot`
   ADD PRIMARY KEY (`ID_COTIZACION`);
 
 --
--- Indices de la tabla `users`
+-- Indexes for table `users`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`id_user`);
 
 --
--- AUTO_INCREMENT de las tablas volcadas
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT de la tabla `contacto`
+-- AUTO_INCREMENT for table `contacto`
 --
 ALTER TABLE `contacto`
-  MODIFY `ID_CONTACTO` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `ID_CONTACTO` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
--- AUTO_INCREMENT de la tabla `formulario`
+-- AUTO_INCREMENT for table `formulario`
 --
 ALTER TABLE `formulario`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
--- AUTO_INCREMENT de la tabla `serviciocot`
+-- AUTO_INCREMENT for table `serviciocot`
 --
 ALTER TABLE `serviciocot`
   MODIFY `ID_COTIZACION` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
--- AUTO_INCREMENT de la tabla `users`
+-- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -7,18 +7,21 @@
     <h2>Registro de Usuario</h2>
   </div>
 
-  <form class="row align-items-center" id="form_user" method="POST" action="index.php?c=usuario&f=nuevo">
+  <form class="row align-items-center" id="form_user" method="POST" action="index.php?c=usuario&f=editar">
 
     <div class="row justify-content-center pb-5">
+      <!-- id -->
+      <input class="formulario-control" id="id" name="id" type=" hidden" value=" <?php echo $row['id_user']; ?>" />
       <!-- username -->
       <div class="col-md-4">
         <label class="form-label" for="username">Nombre de usuario</label>
-        <input class="form-control" id="username" name="username" type="text" />
+        <input class="form-control" id="username" name="username" type="text"
+          value=" <?php echo $row['username']; ?>" />
       </div>
       <!-- email -->
       <div class="col-md-4">
         <label class="form-label" for="email">Correo electrónico</label>
-        <input class="form-control" id="email" name="email" type="email" />
+        <input class="form-control" id="email" name="email" type="email" value=" <?php echo $row['email']; ?>" />
       </div>
     </div>
 
@@ -26,19 +29,28 @@
       <!-- birthday -->
       <div class="col-md-4">
         <label class="form-label" for="birthday">Fecha de nacimiento</label>
-        <input class="form-control" id="birthday" name="birthday" type="date" />
+        <input class="form-control" id="birthday" name="birthday" type="date"
+          value=" <?php echo $row['birthday']; ?>" />
       </div>
       <!-- nationality -->
       <div class="col-md-4">
         <label class="form-label" for="nationality">Nacionalidad (opcional)</label>
         <!-- <input id="date" type="date" /> -->
         <select class="form-select" id="nationality" name="nationality">
-          <option value="N/A">N/A</option>
-          <option value="Ecuador">Ecuador</option>
-          <option value="Perú">Perú</option>
-          <option value="Venezuela">Venezuela</option>
-          <option value="Chile">Chile</option>
-        </select>
+          <?php
+          $selected = $row['nationality'];
+          $options = array('-- Seleccione --', 'Ecuatoriano', 'Peruano', 'Colombiano');
+          echo "<select name='nationality'>";
+          foreach ($options as $option) {
+            if ($selected == $option) {
+              echo "<option selected='selected' value='$option'>$option</option>";
+            } else {
+              echo "<option value='$option'>$option</option>";
+            }
+          }
+          echo
+          "</select>";
+          ?>
       </div>
     </div>
 
@@ -46,13 +58,15 @@
       <!-- password1 -->
       <div class="col-md-4">
         <label class="form-label" for="password1">Contraseña: </label>
-        <input class="form-control" id="password1" name="password1" type="password" placeholder="password1" />
+        <input class="form-control" id="password1" name="password1" type="password"
+          value=" <?php echo $row['password']; ?>" />
       </div>
 
       <!-- password2 -->
       <div class="col-md-4">
         <label class="form-label" for="password2">Confirmar contraseña: </label>
-        <input class="form-control" id="password2" name="password2" type="password" />
+        <input class="form-control" id="password2" name="password2" type="password"
+          value=" <?php echo $row['password']; ?>" />
       </div>
     </div>
 
@@ -61,7 +75,7 @@
         <!-- send -->
         <button class="btn btn-outline-primary btn-lg" id="button_send" type="submit" value="save">Enviar</button>
         <!-- cancel -->
-        <button class="btn btn-outline-primary btn-lg" id="button_cancel">Canceler</button>
+        <a class="btn btn-outline-primary btn-lg" id="button_cancel" href="index.php?c=usuario&f=index">Cancelar</a>
       </div>
     </div>
 

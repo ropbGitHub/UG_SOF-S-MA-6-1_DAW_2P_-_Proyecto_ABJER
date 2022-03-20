@@ -46,7 +46,7 @@
       <!-- password1 -->
       <div class="col-md-4">
         <label class="form-label" for="password1">Contraseña: </label>
-        <input class="form-control" id="password1" name="password1" type="password" placeholder="password1" />
+        <input class="form-control" id="password1" name="password1" type="password" />
       </div>
 
       <!-- password2 -->
@@ -61,7 +61,7 @@
         <!-- send -->
         <button class="btn btn-outline-primary btn-lg" id="button_send" type="submit" value="save">Enviar</button>
         <!-- cancel -->
-        <button class="btn btn-outline-primary btn-lg" id="button_cancel">Canceler</button>
+        <a class="btn btn-outline-primary btn-lg" id="button_cancel" href="index.php?c=usuario&f=index">Cancelar</a>
       </div>
     </div>
 

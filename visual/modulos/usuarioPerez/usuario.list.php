@@ -9,7 +9,7 @@
     <h2>Lista de Usuarios</h2>
   </div>
 
-  <table>
+  <table class="table table-dark table-hover">
     <thead>
       <tr>
         <th>ID</th>
@@ -18,6 +18,7 @@
         <th>BIRTHDAY</th>
         <th>NATIONALITY</th>
         <th>PASSWORD</th>
+        <th></th>
       </tr>
     </thead>
     <tbody>
