@@ -50,7 +50,7 @@
               <a href="index.php?c=usuario&a=index&p=usuario"><strong class="peso">Inicio</strong></a>
             </li>
             <li>
-              <a href="GonzalezEmily.html"><strong class="peso">Galería</strong></a>
+              <a href="index.php?c=galeria&a=index&p=galeria"><strong class="peso">Galería</strong></a>
             </li>
             <li>
               <a href="index.php?c=cotizar&a=index&p=cotizar"><strong class="peso">Servicios</strong></a>
