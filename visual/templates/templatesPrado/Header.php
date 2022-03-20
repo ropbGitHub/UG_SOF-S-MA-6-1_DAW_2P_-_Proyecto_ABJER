@@ -2,7 +2,6 @@
 <html lang="es">
   <!--head-->
   <!--TODO copiar y pegar partes que se van a repetir a lo largo de todas las páginas-->
-
   <head>
     <!-- Browser tab tittle -->
     <title>ABJER | Salón de Eventos & Más</title>

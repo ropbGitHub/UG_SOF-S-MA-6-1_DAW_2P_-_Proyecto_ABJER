@@ -2,7 +2,6 @@
 
 <html lang="es">
   <!-- head -->
-
   <head>
     <!-- Browser tab tittle -->
     <title>ABJER | Salón de Eventos & Más</title>
