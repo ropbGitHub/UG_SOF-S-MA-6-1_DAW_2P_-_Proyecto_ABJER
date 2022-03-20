@@ -37,7 +37,7 @@
           <!-- update -->
           <a href="index.php?c=usuario&f=editar&id=<?php echo $row['id_user'] ?>">Actualizar</a>
           <!-- delete -->
-          <a onclick="if(!confirm('Esta seguro de eliminar el contacto?'))return false;"
+          <a onclick="if(!confirm('Esta seguro de eliminar el contacto de id: <?php echo $row['id_user']; ?>?'))return false;"
             href="index.php?c=usuario&f=eliminar&id=<?php echo $row['id_user']; ?>">Eliminar</a>
         </td>
       </tr>
