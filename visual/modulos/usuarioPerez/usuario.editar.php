@@ -11,7 +11,7 @@
 
     <div class="row justify-content-center pb-5">
       <!-- id -->
-      <input class="formulario-control" id="id" name="id" type=" hidden" value=" <?php echo $row['id_user']; ?>" />
+      <input class="form-control" id="id" name="id" type="hidden" value=" <?php echo $row['id_user']; ?>" />
       <!-- username -->
       <div class="col-md-4">
         <label class="form-label" for="username">Nombre de usuario</label>
@@ -26,35 +26,36 @@
     </div>
 
     <div class="row justify-content-center pb-5">
+
       <!-- birthday -->
       <div class="col-md-4">
         <label class="form-label" for="birthday">Fecha de nacimiento</label>
         <input class="form-control" id="birthday" name="birthday" type="date"
           value=" <?php echo $row['birthday']; ?>" />
       </div>
+
       <!-- nationality -->
       <div class="col-md-4">
         <label class="form-label" for="nationality">Nacionalidad (opcional)</label>
-        <!-- <input id="date" type="date" /> -->
-        <select class="form-select" id="nationality" name="nationality">
-          <?php
-          $selected = $row['nationality'];
-          $options = array('-- Seleccione --', 'Ecuatoriano', 'Peruano', 'Colombiano');
-          echo "<select name='nationality'>";
-          foreach ($options as $option) {
-            if ($selected == $option) {
-              echo "<option selected='selected' value='$option'>$option</option>";
-            } else {
-              echo "<option value='$option'>$option</option>";
-            }
+        <?php
+        $selected = $row['nationality'];
+        $options = array('-- Seleccione --', 'Ecuatoriano', 'Peruano', 'Colombiano');
+        echo "<select class='form-select' name='nationality'>";
+        foreach ($options as $option) {
+          if ($selected == $option) {
+            echo "<option selected='selected' value='$option'>$option</option>";
+          } else {
+            echo "<option value='$option'>$option</option>";
           }
-          echo
-          "</select>";
-          ?>
+        }
+        echo
+        "</select>";
+        ?>
       </div>
     </div>
 
     <div class="row justify-content-center pb-5">
+
       <!-- password1 -->
       <div class="col-md-4">
         <label class="form-label" for="password1">Contraseña: </label>

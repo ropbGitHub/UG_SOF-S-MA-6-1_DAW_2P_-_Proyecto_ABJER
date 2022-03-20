@@ -34,10 +34,9 @@
         <!-- <input id="date" type="date" /> -->
         <select class="form-select" id="nationality" name="nationality">
           <option value="N/A">N/A</option>
-          <option value="Ecuador">Ecuador</option>
-          <option value="Perú">Perú</option>
-          <option value="Venezuela">Venezuela</option>
-          <option value="Chile">Chile</option>
+          <option value="Ecuatoriano">Ecuatoriano</option>
+          <option value="Peruano">Peruano</option>
+          <option value="Colombiano">Colombiano</option>
         </select>
       </div>
     </div>

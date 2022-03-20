@@ -97,7 +97,7 @@ class UsuarioControl {
             $row = $this->model->searchId($id);
 
             // shows form new
-            require_once 'visual/modulos/usuarioPerez/usuario.nuevo.php';
+            require_once 'visual/modulos/usuarioPerez/usuario.editar.php';
         }
     }
 
