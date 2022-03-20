@@ -33,11 +33,11 @@
         <label class="form-label" for="nationality">Nacionalidad (opcional)</label>
         <!-- <input id="date" type="date" /> -->
         <select class="form-select" id="nationality" name="nationality">
-          <option value="0">N/A</option>
-          <option value="1">Ecuador</option>
-          <option value="2">Perú</option>
-          <option value="3">Venezuela</option>
-          <option value="4">Chile</option>
+          <option value="N/A">N/A</option>
+          <option value="Ecuador">Ecuador</option>
+          <option value="Perú">Perú</option>
+          <option value="Venezuela">Venezuela</option>
+          <option value="Chile">Chile</option>
         </select>
       </div>
     </div>

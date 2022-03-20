@@ -16,9 +16,9 @@ class UsuarioDAO {
         // Execute SQL sentence
         $stmt->execute();
         // Capture results
-        $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
         // Return results to controller
-        return $rows;
+        return $results;
     }
 
     public function insertar($username, $email, $birthday, $nationality, $password) {
@@ -71,14 +71,14 @@ class UsuarioDAO {
     }
 
     public function eliminar($id) {
-        // Assign values
-        $data = [
-            'data_Id' => $id
-        ];
         // SQL sentence
         $sql = "DELETE FROM users WHERE id_user = :data_Id";
         // Bind parameters
         $stmt = $this->con->prepare($sql);
+        // Assign values
+        $data = [
+            'data_Id' => $id
+        ];
         // Execute SQL sentence
         $stmt->execute($data);
         // Return result

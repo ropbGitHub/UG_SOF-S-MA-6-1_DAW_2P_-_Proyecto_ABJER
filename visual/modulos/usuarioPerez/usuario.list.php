@@ -3,17 +3,12 @@
 <!-- main-->
 <main class="container pb-5">
 
-  <a href="index.php?c=usuario&f=nuevo"><strong class="peso">Agregar de Usuario</strong></a>
+  <a href="index.php?c=usuario&f=nuevo">Crear nuevo Usuario</a>
 
   <div class="cabecera">
     <h2>Lista de Usuarios</h2>
   </div>
-  <!--
-  <form>
-    <input type="text">
-    <button class="btn btn-primary btn-lg" id="button_search" type="summit">Buscar</button>
-  </form>
--->
+
   <table>
     <thead>
       <tr>
@@ -27,7 +22,7 @@
     </thead>
     <tbody>
       <?php
-      foreach ($rows as $row) {
+      foreach ($results as $row) {
       ?>
       <tr>
         <td><?php echo $row['id_user'] ?></td>
@@ -39,11 +34,10 @@
         <td>
           <!-- Passing "id" with value of id_user -->
           <!-- update -->
-          <a href="../Registrarse_RPB/sign_in-update.php?id=<?php echo $row['id_user'] ?>">Actualizar</a>
+          <a href="index.php?c=usuario&f=editar&id=<?php echo $row['id_user'] ?>">Actualizar</a>
           <!-- delete -->
           <a onclick="if(!confirm('Esta seguro de eliminar el contacto?'))return false;"
-            href="index.php?c=usuario&f=eliminar&id=<?php echo $fila['id_user']; ?>"><i
-              class="material-icons">Eliminar</i></a>
+            href="index.php?c=usuario&f=eliminar&id=<?php echo $row['id_user']; ?>">Eliminar</a>
         </td>
       </tr>
       <?php } ?>
