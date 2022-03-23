@@ -7,7 +7,7 @@ class Galeria {
     function __construct() {
         
     }
-//GETTER
+    //GETTER
  
 
     function getFecha_evento() {
@@ -34,9 +34,9 @@ class Galeria {
         return $this->salon;
     }
 
- }
+ 
 
-//SETTER
+    //SETTER
 
     function setFecha_evento($fecha_evento) {
         $this->fecha_evento = $fecha_evento;
